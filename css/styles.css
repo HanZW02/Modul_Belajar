@@ -1,0 +1,23 @@
+.accordion-body img {
+            max-width: 100%; 
+            height: auto;   
+            display: block; 
+            border: 1px solid #ddd;
+            border-radius: .25rem;
+            margin-top: 10px;
+        }
+        .card-body img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: .25rem;
+            margin-top: 10px;
+        }
+        .tag-code {
+            font-family: monospace;
+            font-size: 1.1em;
+            color: #0d6efd;
+            background-color: #e9f2ff;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
