@@ -3,16 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modul CSS</title>
+    <title>Modul CSS: Referensi Sintaks</title>
     <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="../assets/img/favicon/logo_ekskul.png">
     <style>
+        /* Gaya kustom untuk modul */
         .card-body img {
             max-width: 100%;
             height: auto;
             border: 1px solid #ddd;
             border-radius: .25rem;
             margin-top: 10px;
+        }
+        .selector-code {
+            font-family: monospace;
+            font-size: 1.1em;
+            color: #198754; /* Success green */
+            background-color: #d1e7dd;
+            padding: 2px 4px;
+            border-radius: 3px;
         }
         .box-model-demo {
             border: 5px solid red;
@@ -27,8 +36,8 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h1 class="mb-4 text-success">Modul CSS: Dasar-Dasar Penataan Gaya</h1>
-        <p class="lead">CSS (Cascading Style Sheets) digunakan untuk mengatur tampilan dan gaya elemen-elemen HTML.</p>
+        <h1 class="mb-4 text-success">Modul CSS: Referensi Sintaks Dasar</h1>
+        <p class="lead">Pelajari cara kerja Selektor, Properti, dan Konsep Box Model di CSS.</p>
 
         <a href="../index.html" class="btn btn-sm btn-outline-secondary mb-4">← Kembali ke Halaman Utama</a>
         <hr>
@@ -42,91 +51,164 @@
                 </h2>
                 <div id="collapseCssOne" class="accordion-collapse collapse show" aria-labelledby="headingCssOne" data-bs-parent="#modulCssAccordion">
                     <div class="accordion-body">
-                        <h5>Sintaks Dasar:</h5>
-                        <p>CSS terdiri dari **selektor** (misalnya `p`), **properti** (misalnya `color`), dan **nilai** (misalnya `red`). Setiap pasangan properti dan nilai adalah sebuah Deklarasi, dan Deklarasi berada di dalam kurung kurawal `{}`.</p>
+                        <h5>Penjelasan:</h5>
+                        <p>Sintaks CSS adalah sebuah aturan yang terdiri dari **Selector** (elemen yang dipilih), diikuti oleh **Declaration Block** yang berisi pasangan Properti dan Nilai.</p>
                         
-                        <p><strong>Visualisasi Sintaks:</strong></p>
+                        <h5 class="mt-3">Penggunaan:</h5>
                         
+
+                        <h5 class="mt-3">Output:</h5>
+                        <p>Semua elemen paragraf (p) akan memiliki teks berwarna merah dan ukuran font 16px:</p>
                         
-                        <div class="mt-3 alert alert-info">
-                            <strong>Output Sintaks:</strong>
-                            <p class="mb-0">Semua teks dalam elemen <code>&lt;p&gt;</code> akan berwarna merah dan memiliki ukuran font 16 piksel.</p>
-                            
-                        </div>
+
+                        <h5 class="mt-3">Note Penting:</h5>
+                        <p>Setiap deklarasi (pasangan Properti: Nilai) harus diakhiri dengan titik koma (<code>;</code>).</p>
                     </div>
                 </div>
             </div>
 
             <div class="accordion-item">
-                <h2 class="accordion-header" id="headingCssTwo">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCssTwo" aria-expanded="false" aria-controls="collapseCssTwo">
-                        2. 3 Metode Penerapan CSS
+                <h2 class="accordion-header" id="headingTypeSelector">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTypeSelector" aria-expanded="false" aria-controls="collapseTypeSelector">
+                        2. Selektor Tipe (Contoh: p)
                     </button>
                 </h2>
-                <div id="collapseCssTwo" class="accordion-collapse collapse" aria-labelledby="headingCssTwo" data-bs-parent="#modulCssAccordion">
+                <div id="collapseTypeSelector" class="accordion-collapse collapse" aria-labelledby="headingTypeSelector" data-bs-parent="#modulCssAccordion">
                     <div class="accordion-body">
-                        <p>Ada tiga cara utama untuk menerapkan CSS ke dokumen HTML:</p>
-                        <ol>
-                            <li>**Inline CSS:** Menggunakan atribut <code>style</code> langsung pada elemen HTML.</li>
-                            <li>**Internal CSS:** Menggunakan tag <code>&lt;style&gt;</code> di dalam <code>&lt;head&gt;</code>.</li>
-                            <li>**External CSS:** Menghubungkan file <code>.css</code> eksternal (Metode terbaik, digunakan oleh Bootstrap).</li>
-                        </ol>
+                        <h5>Penjelasan:</h5>
+                        <p>Selektor tipe menggunakan nama tag HTML secara langsung, misalnya <span class="selector-code">h1</span> atau <span class="selector-code">p</span>. Selektor ini akan memengaruhi **semua** elemen dengan nama tag tersebut di halaman.</p>
                         
-                        <p><strong>Visualisasi Sintaks:</strong></p>
+                        <h5 class="mt-3">Penggunaan:</h5>
                         
+
+                        <h5 class="mt-3">Output:</h5>
+                        <p>Semua elemen <code>&lt;p&gt;</code> di halaman akan berubah warna menjadi ungu.</p>
                         
-                        <div class="mt-3 alert alert-info">
-                            <strong>Output Sintaks:</strong>
-                            <p class="mb-0">Output visualnya menunjukkan perbedaan prioritas (cascading) gaya antara ketiga metode tersebut.</p>
-                            
-                        </div>
+
+                        <h5 class="mt-3">Note Penting:</h5>
+                        <p>Selektor ini berguna untuk membuat gaya dasar yang konsisten di seluruh halaman.</p>
                     </div>
                 </div>
             </div>
 
             <div class="accordion-item">
-                <h2 class="accordion-header" id="headingCssThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCssThree" aria-expanded="false" aria-controls="collapseCssThree">
-                        3. Selector (Pemilih) Lanjutan: Class dan ID
+                <h2 class="accordion-header" id="headingClassSelector">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseClassSelector" aria-expanded="false" aria-controls="collapseClassSelector">
+                        3. Selektor Kelas (Contoh: .nama-class)
                     </button>
                 </h2>
-                <div id="collapseCssThree" class="accordion-collapse collapse" aria-labelledby="headingCssThree" data-bs-parent="#modulCssAccordion">
+                <div id="collapseClassSelector" class="accordion-collapse collapse" aria-labelledby="headingClassSelector" data-bs-parent="#modulCssAccordion">
                     <div class="accordion-body">
-                        <p>Selain selector nama elemen, CSS sering menggunakan **Class** (diawali dengan titik <code>.</code>): untuk menata banyak elemen, dan **ID** (diawali dengan pagar <code>#</code>): untuk menata satu elemen unik.</p>
+                        <h5>Penjelasan:</h5>
+                        <p>Selektor kelas diawali dengan titik (<span class="selector-code">.</span>). Ini adalah cara yang paling fleksibel untuk menerapkan gaya karena dapat digunakan berulang kali pada elemen mana pun.</p>
                         
-                        <p><strong>Visualisasi Sintaks:</strong></p>
+                        <h5 class="mt-3">Penggunaan:</h5>
                         
+
+                        <h5 class="mt-3">Output:</h5>
+                        <p>Hanya elemen yang memiliki atribut <code>class="highlight"</code> yang akan memiliki latar belakang kuning:</p>
                         
-                        <div class="mt-3 alert alert-info">
-                            <strong>Output Sintaks:</strong>
-                            <p class="mb-0">Elemen dengan class akan memiliki latar belakang biru. Elemen dengan ID akan memiliki teks tebal.</p>
-                            
-                        </div>
+
+                        <h5 class="mt-3">Note Penting:</h5>
+                        <p>Satu elemen HTML dapat memiliki **banyak** kelas (contoh: <code>class="btn btn-primary"</code>), dipisahkan oleh spasi.</p>
                     </div>
                 </div>
             </div>
 
             <div class="accordion-item">
-                <h2 class="accordion-header" id="headingCssFour">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCssFour" aria-expanded="false" aria-controls="collapseCssFour">
-                        4. Konsep Dasar: Box Model
+                <h2 class="accordion-header" id="headingIDSelector">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseIDSelector" aria-expanded="false" aria-controls="collapseIDSelector">
+                        4. Selektor ID (Contoh: #nama-id)
                     </button>
                 </h2>
-                <div id="collapseCssFour" class="accordion-collapse collapse" aria-labelledby="headingCssFour" data-bs-parent="#modulCssAccordion">
+                <div id="collapseIDSelector" class="accordion-collapse collapse" aria-labelledby="headingIDSelector" data-bs-parent="#modulCssAccordion">
                     <div class="accordion-body">
-                        <p>Setiap elemen HTML dianggap sebagai kotak. Kotak ini terdiri dari empat bagian yang bertumpuk: **Content**, **Padding**, **Border**, dan **Margin**.</p>
-                        <div class="box-model-demo mt-3">
-                            Content + Padding + Border
-                        </div>
+                        <h5>Penjelasan:</h5>
+                        <p>Selektor ID diawali dengan tanda pagar (<span class="selector-code">#</span>). Selektor ini digunakan untuk menargetkan **satu elemen unik** di seluruh halaman.</p>
                         
-                        <p><strong>Visualisasi Sintaks:</strong></p>
+                        <h5 class="mt-3">Penggunaan:</h5>
                         
+
+                        <h5 class="mt-3">Output:</h5>
+                        <p>Hanya satu elemen (biasanya Header Utama) yang akan terpengaruh dengan gaya ini:</p>
                         
-                        <div class="mt-3 alert alert-info">
-                            <strong>Output Sintaks:</strong>
-                            <p class="mb-0">Elemen akan berukuran total 250px, yang merupakan hasil perhitungan **width** (200px) ditambah **padding** (20px kiri/kanan) dan **border** (5px kiri/kanan), dengan **margin** 10px di luar batas merah.</p>
-                            
-                        </div>
+
+                        <h5 class="mt-3">Note Penting:</h5>
+                        <p>Karena ID harus unik, selektor ini memiliki prioritas (**Spesifisitas**) lebih tinggi daripada Selektor Kelas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingCssBoxModel">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCssBoxModel" aria-expanded="false" aria-controls="collapseCssBoxModel">
+                        5. Konsep Dasar: Box Model
+                    </button>
+                </h2>
+                <div id="collapseCssBoxModel" class="accordion-collapse collapse" aria-labelledby="headingCssBoxModel" data-bs-parent="#modulCssAccordion">
+                    <div class="accordion-body">
+                        <h5>Penjelasan:</h5>
+                        <p>Setiap elemen HTML dianggap sebagai kotak (Box). Kotak ini terdiri dari empat lapisan yang bertumpuk: **Content**, **Padding** (ruang dalam), **Border** (garis tepi), dan **Margin** (ruang luar).</p>
+                        
+                        <h5 class="mt-3">Penggunaan:</h5>
+                        
+
+                        <div class="box-model-demo mt-3">Content + Padding + Border</div>
+
+                        <h5 class="mt-3">Output:</h5>
+                        <p>Ilustrasi visual lapisan Box Model:</p>
+                        
+
+                        <h5 class="mt-3">Note Penting:</h5>
+                        <p>Secara *default*, properti <code>width</code> dan <code>height</code> hanya memengaruhi **Content**. Untuk mengubahnya, gunakan <code>box-sizing: border-box;</code>.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingCssColor">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCssColor" aria-expanded="false" aria-controls="collapseCssColor">
+                        6. Properti Teks: <span class="selector-code">color</span>
+                    </button>
+                </h2>
+                <div id="collapseCssColor" class="accordion-collapse collapse" aria-labelledby="headingCssColor" data-bs-parent="#modulCssAccordion">
+                    <div class="accordion-body">
+                        <h5>Penjelasan:</h5>
+                        <p>Properti <span class="selector-code">color</span> digunakan untuk mengatur warna teks dari suatu elemen.</p>
+                        
+                        <h5 class="mt-3">Penggunaan:</h5>
+                        
+
+                        <h5 class="mt-3">Output:</h5>
+                        <p>Teks di dalam elemen yang ditargetkan akan berubah warna menjadi yang ditentukan:</p>
+                        
+
+                        <h5 class="mt-3">Note Penting:</h5>
+                        <p>Warna dapat didefinisikan menggunakan nama warna (misalnya <code>red</code>), kode heksadesimal (misalnya <code>#FF0000</code>), atau nilai RGB/RGBA.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingCssBg">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCssBg" aria-expanded="false" aria-controls="collapseCssBg">
+                        7. Properti Latar Belakang: <span class="selector-code">background-color</span>
+                    </button>
+                </h2>
+                <div id="collapseCssBg" class="accordion-collapse collapse" aria-labelledby="headingCssBg" data-bs-parent="#modulCssAccordion">
+                    <div class="accordion-body">
+                        <h5>Penjelasan:</h5>
+                        <p>Properti <span class="selector-code">background-color</span> digunakan untuk mengatur warna latar belakang (background) dari suatu elemen.</p>
+                        
+                        <h5 class="mt-3">Penggunaan:</h5>
+                        
+
+                        <h5 class="mt-3">Output:</h5>
+                        <p>Elemen akan diisi dengan warna latar belakang yang ditentukan:</p>
+                        
+
+                        <h5 class="mt-3">Note Penting:</h5>
+                        <p>Properti ini tidak memengaruhi warna teks. Untuk warna teks, gunakan properti <code>color</code>.</p>
                     </div>
                 </div>
             </div>
