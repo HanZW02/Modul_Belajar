@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modul HTML</title>
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon/logo_ekskul.png">
+    <style>
+        .card-body img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: .25rem;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4 text-primary">Modul HTML: Dasar-Dasar Struktur Web</h1>
+        <p class="lead">HTML (HyperText Markup Language) adalah bahasa markup yang digunakan untuk membuat struktur halaman web.</p>
+
+        <a href="../index.html" class="btn btn-sm btn-outline-secondary mb-4">← Kembali ke Halaman Utama</a>
+        <hr>
+
+        <div class="accordion" id="modulHtmlAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        1. Struktur Dasar Dokumen HTML
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#modulHtmlAccordion">
+                    <div class="accordion-body">
+                        <h5>Sintaks Inti:</h5>
+                        <p>Sintaks inti HTML mencakup deklarasi <code>&lt;!DOCTYPE html&gt;</code>, elemen <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code> (untuk metadata), dan <code>&lt;body&gt;</code> (untuk konten yang terlihat).</p>
+                        
+                        <p><strong>Visualisasi Sintaks:</strong></p>
+                        
+
+                        <div class="mt-3 alert alert-info">
+                            <strong>Output Sintaks:</strong>
+                            <p class="mb-0">Outputnya adalah halaman web kosong dengan judul yang muncul di tab browser.</p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        2. Elemen Teks (Heading dan Paragraf)
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#modulHtmlAccordion">
+                    <div class="accordion-body">
+                        <h5>Sintaks Heading (H1-H6) dan Paragraf (P):</h5>
+                        <p>Heading (<code>&lt;h1&gt;</code> hingga <code>&lt;h6&gt;</code>) digunakan untuk judul dengan ukuran yang berbeda. Paragraf (<code>&lt;p&gt;</code>) digunakan untuk teks biasa. Teks juga bisa dibuat **tebal** (<code>&lt;strong&gt;</code>) atau *miring* (<code>&lt;em&gt;</code>).</p>
+                        
+                        <p><strong>Visualisasi Sintaks:</strong></p>
+                        
+
+                        <div class="mt-3 alert alert-info">
+                            <strong>Output Sintaks:</strong>
+                            <p class="mb-0">Heading (H1) ditampilkan paling besar, H3 lebih kecil. Teks dalam **strong** akan tebal, dan *em* akan miring.</p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        3. Tautan (Links) dan Gambar (Images)
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#modulHtmlAccordion">
+                    <div class="accordion-body">
+                        <h5>Sintaks Tautan (<code>&lt;a&gt;</code>) dan Gambar (<code>&lt;img&gt;</code>):</h5>
+                        <p>Tautan menggunakan <code>&lt;a&gt;</code> dengan atribut <code>href</code> untuk menentukan tujuan. Gambar menggunakan elemen <code>&lt;img&gt;</code> dengan atribut <code>src</code> untuk sumber file dan <code>alt</code> untuk teks alternatif.</p>
+                        
+                        <p><strong>Visualisasi Sintaks:</strong></p>
+                        
+
+                        <div class="mt-3 alert alert-info">
+                            <strong>Output Sintaks:</strong>
+                            <p class="mb-0">Akan ada teks tautan yang dapat diklik (membuka di tab baru) dan di bawahnya akan muncul gambar logo ekstrakurikuler dengan lebar 100px.</p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        4. Daftar (Ordered and Unordered Lists)
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#modulHtmlAccordion">
+                    <div class="accordion-body">
+                        <h5>Sintaks Daftar:</h5>
+                        <p>Daftar Tak Berurutan (<code>&lt;ul&gt;</code>) menggunakan simbol (bullet point). Daftar Berurutan (<code>&lt;ol&gt;</code>) menggunakan angka atau huruf. Keduanya menggunakan elemen <code>&lt;li&gt;</code> untuk setiap itemnya.</p>
+                        
+                        <p><strong>Visualisasi Sintaks:</strong></p>
+                        
+
+                        <div class="mt-3 alert alert-info">
+                            <strong>Output Sintaks:</strong>
+                            <p class="mb-0">Daftar tak berurutan akan menggunakan simbol, sedangkan daftar berurutan akan menggunakan angka.</p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="../index.html" class="btn btn-secondary mt-4">← Kembali ke Halaman Utama</a>
+    </div>
+
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
