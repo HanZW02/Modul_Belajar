@@ -14,6 +14,28 @@
       href="../assets/img/favicon/logo_ekskul.png"
     />
     <link rel="stylesheet" href="../css/styles.css" />
+    <style>
+      /* CSS Khusus untuk Modul HTML */
+      .accordion-body img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        border: 1px solid #ddd;
+        border-radius: 0.25rem;
+        margin-top: 10px;
+      }
+      .tag-code {
+        font-family: monospace;
+        font-size: 1.1em;
+        color: #0d6efd;
+        background-color: #e9f2ff;
+        padding: 2px 4px;
+        border-radius: 3px;
+      }
+      p {
+        text-align: justify;
+      }
+    </style>
   </head>
   <body>
     <!-- CONTAINER -->
@@ -27,11 +49,10 @@
       >
       <hr />
 
-      <!-- MATERI DASAR START -->
-
       <!-- ACCORDION START -->
       <div class="accordion" id="modulHtmlAccordion">
-        <h3 class="mt-4 mb-3">Materi Dasar Struktur & Konten</h3>
+        <!-- BAGIAN 1 START -->
+        <h3 class="mt-4 mb-3">Bagian 1: Materi Dasar Struktur & Konten</h3>
         <!-- !DOCTYPE START -->
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingDoctype">
@@ -59,15 +80,31 @@
                 Deklarasi
                 <span class="tag-code">&lt;!DOCTYPE html&gt;</span> harus
                 menjadi baris pertama dalam kode HTML kamu. Tujuannya adalah
-                memberi tahu browser bahwa ini adalah dokumen HTML5.
+                memberi tahu browser bahwa ini adalah dokumen HTML5. Deklarasi
+                ini merupakan sebuah instruksi kunci yang membuat browser masuk
+                ke Standards Mode (Mode Standar), memastikan kode HTML dan CSS
+                dibaca dan ditampilkan secara benar sesuai dengan standar World
+                Wide Web Consortium (W3C), sehingga tampilan website menjadi
+                konsisten di berbagai browser modern. Jika deklarasi ini
+                dihilangkan, browser bisa saja masuk ke Quirks Mode (Mode Aneh)
+                yang akan menyebabkan tampilan halaman menjadi tidak terduga
+                atau rusak karena meniru perilaku browser-browser kuno.
               </p>
 
               <h5 class="mt-3">Penggunaan:</h5>
-              <img
-                src="../assets/img/Modul_HTML/doctype img/doctype_img.png"
-                alt=""
-              />
-
+              <div class="code-box">
+                <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  ...
+&lt;/head&gt;
+&lt;body&gt;
+  ...               
+&lt;/body&gt;
+&lt;/html&gt;
+                </code></pre>
+              </div>
               <h5 class="mt-3">Note Penting:</h5>
               <p>
                 Ini bukan tag HTML, melainkan instruksi untuk browser dan harus
@@ -103,21 +140,39 @@
             <div class="accordion-body">
               <h5>Penjelasan:</h5>
               <p>
-                Tag <span class="tag-code">&lt;html&gt;</span> adalah wadah
-                utama atau akar untuk semua elemen HTML yang lain (kecuali
-                <code>&lt;!DOCTYPE html&gt;</code>).
+                <span class="tag-code">&lt;html&gt;</span> adalah elemen akar
+                (root element) yang wajib ada dan membungkus seluruh konten dari
+                sebuah halaman HTML, di luar deklarasi
+                <code>&lt;!DOCTYPE html&gt;</code>. Elemen ini berfungsi sebagai
+                wadah utama yang menandai awal dan akhir dari dokumen HTML
+                secara keseluruhan, memberitahu web browser bahwa semua yang ada
+                di dalamnya adalah kode HTML. Tag ini juga berfungsi sebagai
+                tempat untuk menetapkan atribut global, yang paling umum adalah
+                atribut lang (contoh: <code>&lt;html lang="id"&gt;</code>).
+                Atribut ini sangat penting karena menentukan bahasa utama konten
+                halaman (dalam contoh ini, Indonesia), yang membantu mesin
+                pencari (SEO) untuk mengindeks halaman dengan benar dan membantu
+                perangkat pembaca layar (teknologi aksesibilitas) untuk
+                membacakan teks dengan intonasi yang tepat. Semua elemen penting
+                lainnya, yaitu <code>&lt;head&gt;</code> dan
+                <code>&lt;body&gt;</code>, harus diletakkan sebagai anak
+                langsung dari tag <code>&lt;html&gt;</code> dan
+                <code>&lt;/html&gt;</code>.
               </p>
 
               <h5 class="mt-3">Penggunaan:</h5>
-              <img
-                src="../assets/img/Modul_HTML/html img/html1_img.png"
-                alt=""
-              />
-              <hr />
-              <img
-                src="../assets/img/Modul_HTML/html img/html2_img.png"
-                alt=""
-              />
+              <div class="code-box">
+                <pre><code class="language-html">
+&lt;!DOCTYPE html&gt; 
+&lt;html lang="id"&gt;  
+&lt;head&gt;
+        
+&lt;/head&gt;
+&lt;body&gt;
+        
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+              </div>
 
               <h5 class="mt-3">Note Penting:</h5>
               <p>
@@ -155,20 +210,36 @@
             <div class="accordion-body">
               <h5>Penjelasan:</h5>
               <p>
-                Tag <span class="tag-code">&lt;head&gt;</span> berisi informasi
-                tentang dokumen (metadata) yang tidak terlihat langsung di
-                halaman. Akan tetapi, penting untuk browser, SEO, dan linking.
+                Tag <span class="tag-code">&lt;head&gt;</span> berfungsi sebagai
+                wadah metadata atau informasi tentang dokumen HTML itu sendiri.
+                Letaknya harus berada tepat di dalam tag
+                <code>&lt;html&gt;</code>, sebelum tag
+                <code>&lt;body&gt;</code>. Metadata adalah data tentang data;
+                dalam konteks web, ini adalah informasi yang tidak ditampilkan
+                secara langsung pada halaman web oleh browser kepada pengguna,
+                tetapi sangat penting untuk berbagai fungsi.
               </p>
 
               <h5 class="mt-3">Penggunaan:</h5>
-              <img src="../assets/img/Modul_HTML/head/head_img.png" alt="" />
+              <div class="code-box">
+                <pre><code>
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+                </code></pre>
+              </div>
 
               <h5 class="mt-3">Output:</h5>
               <p>
                 pada baris kode ini hanya teks dalam
                 <code>&lt;title&gt;</code> yang terlihat di tab browser.
               </p>
-              <img src="../assets/img/Modul_HTML/head/head2_img.png" alt="" />
+              <img
+                src="../assets/img/Modul_HTML/head/head2_img.png"
+                alt="Output judul halaman pada tab browser"
+              />
 
               <h5 class="mt-3">Note Penting:</h5>
               <p>
@@ -179,9 +250,7 @@
             </div>
           </div>
         </div>
-
         <!-- head END -->
-
         <!-- body START -->
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingBody">
@@ -206,19 +275,38 @@
             <div class="accordion-body">
               <h5>Penjelasan:</h5>
               <p>
-                Tag <span class="tag-code">&lt;body&gt;</span> adalah wadah
-                untuk semua konten yang terlihat oleh pengguna di browser.
+                Tag <span class="tag-code">&lt;body&gt;</span> adalah tag yang
+                paling penting dalam sebuah dokumen HTML karena berfungsi
+                sebagai wadah utama untuk semua konten yang terlihat oleh
+                pengguna web. Tag ini harus diletakkan setelah tag
+                <code>&lt;head&gt;</code> dan merupakan anak langsung dari tag
+                <code>&lt;html&gt;</code>.
               </p>
 
               <h5 class="mt-3">Penggunaan:</h5>
-              <img src="../assets/img/Modul_HTML/body/body_img.png" alt="" />
+              <div class="code-box">
+                <pre>
+                  <code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+  &lt;h1&gt;Judul ini akan terlihat di body&lt;/h1&gt;
+  &lt;p&gt;Paragraf ini juga akan terlihat di body.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                  </code>
+                </pre>
+              </div>
 
               <h5 class="mt-3">Output:</h5>
               <p>
                 Semua elemen seperti heading dan paragraf akan terlihat di
                 halaman:
               </p>
-              <img src="../assets/img/Modul_HTML/body/body2_img.png" alt="" />
+              <img
+                src="../assets/img/Modul_HTML/body/body2_img.png"
+                alt="Output teks yang terlihat di body halaman"
+              />
 
               <h5 class="mt-3">Note Penting:</h5>
               <p>
@@ -231,6 +319,7 @@
 
         <!-- body END -->
         <!-- p START -->
+
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingP">
             <button
@@ -253,15 +342,37 @@
             <div class="accordion-body">
               <h5>Penjelasan:</h5>
               <p>
-                Tag <span class="tag-code">&lt;p&gt;</span> mendefinisikan
-                sebuah paragraf. Secara default, browser menambahkan margin
-                (spasi) sebelum dan sesudah paragraf.
+                <span class="tag-code">&lt;p&gt;</span> adalah salah satu elemen
+                yang ada pada HTML yang digunakan untuk mendefinisikan sebuah
+                paragraf dalam dokumen web. Tag ini merupakan salah satu elemen
+                blok level yang paling sering digunakan dalam HTML. Secara
+                default, tag ini memberikan spasi vertical sebelum dan sesudah
+                teks, sehingga memisahkan paragraf satu dengan lainnya. Dengan
+                menggunakannya maka akan menghasilkan teks yang lebih rapi dan
+                mudah dibaca oleh pengunjung website.
               </p>
 
               <h5 class="mt-3">Penggunaan:</h5>
+              <div class="code-box">
+                <pre>
+                  <code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+  &lt;p&gt;ini adalah teks!&lt;/p&gt;
+  &lt;p&gt;ini juga teks!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                </code>
+              </pre>
+              </div>
 
               <h5 class="mt-3">Output:</h5>
               <p>Dua blok teks terpisah dengan jarak vertikal di antaranya:</p>
+              <img
+                src="../assets/img/Modul_HTML/p img/p2_img.png"
+                alt="Output dua paragraf dengan spasi"
+              />
 
               <h5 class="mt-3">Note Penting:</h5>
               <p>
@@ -272,6 +383,7 @@
           </div>
         </div>
         <!-- p END -->
+
         <!-- a START -->
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingA">
@@ -301,19 +413,33 @@
               </p>
 
               <h5 class="mt-3">Penggunaan:</h5>
-
+              <p>Ketika kalian klik link dari <code>&lt;a&gt;&lt;/a&gt;</code>, kalian bakal dialihkan ke link yang kalian ketik di href.</p>
+              <div class="code-box">
+                <pre>
+                  <code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+  &lt;a href="https://www.instagram.com/rhnkmlw_/" target="_blank"&gt;Follow IG Pak Rehan yes!!!&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                </code>
+              </pre>
+              </div>
               <h5 class="mt-3">Output:</h5>
               <p>Teks yang diklik akan mengarahkan ke URL tujuan:</p>
+
+              <img src="../assets/img/Modul_HTML/a/a_img.png" alt="">
 
               <h5 class="mt-3">Note Penting:</h5>
               <p>
                 Atribut <code>href</code> adalah wajib untuk menentukan alamat
-                tujuan.
+                tujuan. Gunakan <code>target="_blank"</code> untuk membuka
+                tautan di tab baru.
               </p>
             </div>
           </div>
         </div>
-
         <!-- a END -->
         <!-- img START -->
         <div class="accordion-item">
@@ -339,10 +465,23 @@
               <h5>Penjelasan:</h5>
               <p>
                 Tag <span class="tag-code">&lt;img&gt;</span> menyematkan gambar
-                ke dalam halaman. Ini adalah tag *self-closing*.
+                ke dalam halaman.
               </p>
 
               <h5 class="mt-3">Penggunaan:</h5>
+              <p>lorem ipsum</p>
+              <div class="code-box">
+                <pre>
+                  <code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+  &lt;img src="*ganti dengan image mu*" alt="*Deskripsi Gambar*"&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                  </code>
+                </pre>
+              </div>
 
               <h5 class="mt-3">Output:</h5>
               <p>Gambar yang disematkan akan muncul di halaman:</p>
@@ -356,10 +495,8 @@
             </div>
           </div>
         </div>
-
         <!-- img END -->
         <!-- hr START -->
-
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingHr">
             <button
@@ -384,7 +521,8 @@
               <p>
                 Tag <span class="tag-code">&lt;hr&gt;</span> merepresentasikan
                 garis pemisah tematik (misalnya pergantian subjek) dan
-                ditampilkan sebagai garis horizontal.
+                ditampilkan sebagai garis horizontal. Ini adalah tag
+                *self-closing*.
               </p>
 
               <h5 class="mt-3">Penggunaan:</h5>
@@ -400,7 +538,6 @@
             </div>
           </div>
         </div>
-
         <!-- hr END -->
         <!-- br START -->
         <div class="accordion-item">
@@ -427,7 +564,7 @@
               <p>
                 Tag <span class="tag-code">&lt;br&gt;</span> menyisipkan jeda
                 baris tunggal (line break). Berguna untuk puisi atau alamat di
-                mana pemisahan baris penting.
+                mana pemisahan baris penting. Ini adalah tag *self-closing*.
               </p>
 
               <h5 class="mt-3">Penggunaan:</h5>
@@ -446,7 +583,6 @@
             </div>
           </div>
         </div>
-
         <!-- br END -->
         <!-- pre START -->
         <div class="accordion-item">
@@ -494,107 +630,10 @@
           </div>
         </div>
         <!-- pre END -->
-
-        <!-- MATERI DASAR END -->
-        <!-- MATERI LANJUTAN START -->
-
-        <h3 class="mt-5 mb-3">
-          Materi Lanjutan: Atribut, Format Teks, dan Komentar
-        </h3>
-
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingAttrGlobal">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseAttrGlobal"
-              aria-expanded="false"
-              aria-controls="collapseAttrGlobal"
-            >
-              11. Atribut Global (class, id, style, title)
-            </button>
-          </h2>
-          <div
-            id="collapseAttrGlobal"
-            class="accordion-collapse collapse"
-            aria-labelledby="headingAttrGlobal"
-            data-bs-parent="#modulHtmlAccordion"
-          >
-            <div class="accordion-body">
-              <h5>Penjelasan:</h5>
-              <p>
-                Atribut Global dapat digunakan pada hampir semua elemen HTML
-                untuk memberikan informasi tambahan atau memodifikasi
-                tampilan/perilaku elemen.
-              </p>
-
-              <h5 class="mt-3">Penggunaan:</h5>
-
-              <h5 class="mt-3">Note Penting:</h5>
-              <ul>
-                <li>
-                  <code>class</code>: Untuk menata gaya sekelompok elemen (utama
-                  untuk CSS/Bootstrap).
-                </li>
-                <li>
-                  <code>id</code>: Untuk mengidentifikasi satu elemen unik
-                  (penting untuk JavaScript).
-                </li>
-                <li><code>style</code>: Untuk styling CSS secara inline.</li>
-                <li>
-                  <code>title</code>: Menampilkan teks tooltip saat kursor
-                  diarahkan ke elemen.
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingAttrSpecific">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseAttrSpecific"
-              aria-expanded="false"
-              aria-controls="collapseAttrSpecific"
-            >
-              12. Atribut Wajib &lt;a&gt; (href, target) &amp; &lt;img&gt; (src,
-              alt)
-            </button>
-          </h2>
-          <div
-            id="collapseAttrSpecific"
-            class="accordion-collapse collapse"
-            aria-labelledby="headingAttrSpecific"
-            data-bs-parent="#modulHtmlAccordion"
-          >
-            <div class="accordion-body">
-              <h5>Penjelasan:</h5>
-              <p>
-                Beberapa tag memiliki atribut yang wajib atau sangat penting
-                untuk fungsionalitasnya.
-              </p>
-
-              <h5 class="mt-3">Penggunaan:</h5>
-
-              <h5 class="mt-3">Note Penting:</h5>
-              <ul>
-                <li>
-                  **&lt;a&gt;**: <code>target="_blank"</code> membuka tautan di
-                  tab baru.
-                </li>
-                <li>
-                  **&lt;img&gt;**: <code>alt</code> harus menjelaskan gambar dan
-                  sangat penting untuk aksesibilitas.
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
+        <!-- BAGIAN 1 END -->
+        <!-- BAGIAN 2 START -->
+        <h3 class="mt-5 mb-3">Bagian 2: Format Teks dan Atribut</h3>
+        <!-- FORMAT TEKS START -->
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingTextFormat">
             <button
@@ -605,8 +644,10 @@
               aria-expanded="false"
               aria-controls="collapseTextFormat"
             >
-              13. Format Teks &lt;b&gt;, &lt;strong&gt;, &lt;i&gt;, &lt;em&gt;,
-              dll.
+              11. Format Teks
+              <span class="tag-code"
+                >&lt;b&gt;, &lt;strong&gt;, &lt;em&gt;, dll.</span
+              >
             </button>
           </h2>
           <div
@@ -658,7 +699,8 @@
             </div>
           </div>
         </div>
-
+        <!-- FORMAT TEKS END -->
+        <!-- KOMENTAR START -->
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingComment">
             <button
@@ -669,7 +711,7 @@
               aria-expanded="false"
               aria-controls="collapseComment"
             >
-              14. Komentar HTML <span class="tag-code">&lt;!-- --&gt;</span>
+              12. Komentar HTML <span class="tag-code">&lt;!-- --&gt;</span>
             </button>
           </h2>
           <div
@@ -702,7 +744,111 @@
             </div>
           </div>
         </div>
+        <!-- KOMENTAR END -->
+        <!-- ATRIBUT GLOBAL START -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingAttrGlobal">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseAttrGlobal"
+              aria-expanded="false"
+              aria-controls="collapseAttrGlobal"
+            >
+              13. Atribut Global
+              <span class="tag-code">(class, id, style, title)</span>
+            </button>
+          </h2>
+          <div
+            id="collapseAttrGlobal"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingAttrGlobal"
+            data-bs-parent="#modulHtmlAccordion"
+          >
+            <div class="accordion-body">
+              <h5>Penjelasan:</h5>
+              <p>
+                Atribut Global dapat digunakan pada hampir semua elemen HTML
+                untuk memberikan informasi tambahan atau memodifikasi
+                tampilan/perilaku elemen.
+              </p>
 
+              <h5 class="mt-3">Penggunaan:</h5>
+
+              <h5 class="mt-3">Note Penting:</h5>
+              <ul>
+                <li>
+                  <code>class</code>: Untuk menata gaya sekelompok elemen (utama
+                  untuk CSS/Bootstrap).
+                </li>
+                <li>
+                  <code>id</code>: Untuk mengidentifikasi satu elemen unik
+                  (penting untuk JavaScript).
+                </li>
+                <li><code>style</code>: Untuk styling CSS secara inline.</li>
+                <li>
+                  <code>title</code>: Menampilkan teks tooltip saat kursor
+                  diarahkan ke elemen.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- ATRIBUT GLOBAL END -->
+        <!-- ATRIBUT WAJIB START -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingAttrSpecific">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseAttrSpecific"
+              aria-expanded="false"
+              aria-controls="collapseAttrSpecific"
+            >
+              14. Atribut Wajib
+              <span class="tag-code"
+                >&lt;a&gt; (href, target) &amp; &lt;img&gt; (src, alt)</span
+              >
+            </button>
+          </h2>
+          <div
+            id="collapseAttrSpecific"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingAttrSpecific"
+            data-bs-parent="#modulHtmlAccordion"
+          >
+            <div class="accordion-body">
+              <h5>Penjelasan:</h5>
+              <p>
+                Beberapa tag memiliki atribut yang wajib atau sangat penting
+                untuk fungsionalitasnya.
+              </p>
+
+              <h5 class="mt-3">Penggunaan:</h5>
+
+              <h5 class="mt-3">Note Penting:</h5>
+              <ul>
+                <li>
+                  **&lt;a&gt;**: <code>target="_blank"</code> membuka tautan di
+                  tab baru.
+                </li>
+                <li>
+                  **&lt;img&gt;**: <code>alt</code> harus menjelaskan gambar dan
+                  sangat penting untuk aksesibilitas.
+                </li>
+                <li>
+                  Atribut <code>width</code> dan <code>height</code> pada
+                  <code>&lt;img&gt;</code> membantu browser merender halaman
+                  lebih cepat.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- ATRIBUT WAJIB END -->
+        <!-- STYLING INTERNAL START -->
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingStyle">
             <button
@@ -752,9 +898,518 @@
             </div>
           </div>
         </div>
-      </div>
-      <!-- MATERI LANJUTAN END -->
+        <!-- STYLING INTERNAL END -->
+        <!-- BAGIAN 2 END -->
+        <!-- BAGIAN 3 START -->
+        <h3 class="mt-5 mb-3">Bagian 3: Struktur Konten, Daftar, & Tabel</h3>
+        <!-- h START -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingH1">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseH1"
+              aria-expanded="false"
+              aria-controls="collapseH1"
+            >
+              16. Judul
+              <span class="tag-code">&lt;h1&gt; hingga &lt;h6&gt;</span>
+            </button>
+          </h2>
+          <div
+            id="collapseH1"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingH1"
+            data-bs-parent="#modulHtmlAccordion"
+          >
+            <div class="accordion-body">
+              <h5>Penjelasan:</h5>
+              <p>
+                Tag heading digunakan untuk menentukan pentingnya judul pada
+                hierarki konten. <code>&lt;h1&gt;</code> adalah yang paling
+                penting (terbesar), dan <code>&lt;h6&gt;</code> paling rendah.
+              </p>
+              <h5 class="mt-3">Penggunaan:</h5>
 
+              <h5 class="mt-3">Output:</h5>
+              <p>Ukuran teks yang berbeda untuk setiap tingkatan:</p>
+
+              <h5 class="mt-3">Note Penting:</h5>
+              <p>
+                Idealnya, setiap halaman hanya memiliki **satu** tag
+                <code>&lt;h1&gt;</code>.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- h END -->
+        <!-- div START -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingDiv">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseDiv"
+              aria-expanded="false"
+              aria-controls="collapseDiv"
+            >
+              17. Kontainer Blok
+              <span class="tag-code">&lt;div&gt;&lt;/div&gt;</span>
+            </button>
+          </h2>
+          <div
+            id="collapseDiv"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingDiv"
+            data-bs-parent="#modulHtmlAccordion"
+          >
+            <div class="accordion-body">
+              <h5>Penjelasan:</h5>
+              <p>
+                Tag <span class="tag-code">&lt;div&gt;</span> adalah elemen
+                kontainer tingkat blok (block-level) yang paling umum. Digunakan
+                untuk mengelompokkan elemen lain untuk tujuan *styling* (dengan
+                CSS).
+              </p>
+              <h5 class="mt-3">Penggunaan:</h5>
+
+              <h5 class="mt-3">Output:</h5>
+              <p>
+                Konten akan dikelompokkan dan dapat diterapkan gaya sebagai satu
+                kesatuan blok.
+              </p>
+
+              <h5 class="mt-3">Note Penting:</h5>
+              <p>
+                Tag <code>&lt;div&gt;</code> adalah tag non-semantik. Gunakan
+                tag semantik HTML5 (seperti <code>&lt;section&gt;</code> atau
+                <code>&lt;article&gt;</code>) jika memungkinkan.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- div END -->
+        <!-- span START -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingSpan">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseSpan"
+              aria-expanded="false"
+              aria-controls="collapseSpan"
+            >
+              18. Kontainer Inline
+              <span class="tag-code">&lt;span&gt;&lt;/span&gt;</span>
+            </button>
+          </h2>
+          <div
+            id="collapseSpan"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingSpan"
+            data-bs-parent="#modulHtmlAccordion"
+          >
+            <div class="accordion-body">
+              <h5>Penjelasan:</h5>
+              <p>
+                Tag <span class="tag-code">&lt;span&gt;</span> adalah kontainer
+                generik tingkat *inline*. Digunakan untuk mengelompokkan
+                sebagian kecil teks atau elemen *inline* lainnya untuk *styling*
+                tanpa memulai baris baru.
+              </p>
+              <h5 class="mt-3">Penggunaan:</h5>
+
+              <h5 class="mt-3">Output:</h5>
+              <p>
+                Hanya teks yang berada dalam <code>&lt;span&gt;</code> yang
+                terpengaruh tanpa mengganggu aliran teks di sekitarnya.
+              </p>
+
+              <h5 class="mt-3">Note Penting:</h5>
+              <p>
+                Tidak seperti <code>&lt;div&gt;</code>,
+                <code>&lt;span&gt;</code> tidak dapat menampung elemen blok
+                level lain secara langsung.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- span END -->
+        <!-- TAG SEMANTIK START -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingSemantics">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseSemantics"
+              aria-expanded="false"
+              aria-controls="collapseSemantics"
+            >
+              19. Tag Semantik HTML5
+            </button>
+          </h2>
+          <div
+            id="collapseSemantics"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingSemantics"
+            data-bs-parent="#modulHtmlAccordion"
+          >
+            <div class="accordion-body">
+              <h5>Penjelasan:</h5>
+              <p>
+                Tag semantik (seperti <code>&lt;header&gt;</code>,
+                <code>&lt;nav&gt;</code>, <code>&lt;footer&gt;</code>,
+                <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>)
+                memberikan makna pada bagian-bagian halaman, membantu mesin
+                pencari dan alat bantu aksesibilitas memahami struktur konten.
+              </p>
+              <h5 class="mt-3">Penggunaan:</h5>
+
+              <h5 class="mt-3">Output:</h5>
+              <p>
+                Secara visual tampak seperti <code>&lt;div&gt;</code>, tetapi
+                secara struktural jauh lebih baik untuk SEO.
+              </p>
+
+              <h5 class="mt-3">Note Penting:</h5>
+              <p>
+                Penggunaan tag semantik harus diprioritaskan di atas
+                <code>&lt;div&gt;</code> untuk tata letak utama.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- TAG SEMANTIK END -->
+        <!-- ul START -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingUl">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseUl"
+              aria-expanded="false"
+              aria-controls="collapseUl"
+            >
+              20. Daftar Tak Berurutan
+              <span class="tag-code">&lt;ul&gt; &amp; &lt;li&gt;</span>
+            </button>
+          </h2>
+          <div
+            id="collapseUl"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingUl"
+            data-bs-parent="#modulHtmlAccordion"
+          >
+            <div class="accordion-body">
+              <h5>Penjelasan:</h5>
+              <p>
+                <span class="tag-code">&lt;ul&gt;</span> (Unordered List)
+                digunakan untuk membuat daftar yang tidak mementingkan urutan.
+                Setiap item dalam daftar diapit oleh tag
+                <span class="tag-code">&lt;li&gt;</span> (List Item).
+              </p>
+              <h5 class="mt-3">Penggunaan:</h5>
+
+              <h5 class="mt-3">Output:</h5>
+              <p>
+                Daftar akan ditampilkan dengan simbol (default: bullet point) di
+                depan setiap item.
+              </p>
+
+              <h5 class="mt-3">Note Penting:</h5>
+              <p>
+                Untuk mengubah simbol *bullet*, gunakan properti CSS
+                <code>list-style-type</code>.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- ul END -->
+        <!-- ol START -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOl">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOl"
+              aria-expanded="false"
+              aria-controls="collapseOl"
+            >
+              21. Daftar Berurutan
+              <span class="tag-code">&lt;ol&gt; &amp; &lt;li&gt;</span>
+            </button>
+          </h2>
+          <div
+            id="collapseOl"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingOl"
+            data-bs-parent="#modulHtmlAccordion"
+          >
+            <div class="accordion-body">
+              <h5>Penjelasan:</h5>
+              <p>
+                <span class="tag-code">&lt;ol&gt;</span> (Ordered List)
+                digunakan untuk membuat daftar yang urutannya penting. Setiap
+                item juga diapit oleh tag
+                <span class="tag-code">&lt;li&gt;</span>.
+              </p>
+              <h5 class="mt-3">Penggunaan:</h5>
+
+              <h5 class="mt-3">Output:</h5>
+              <p>
+                Daftar akan ditampilkan dengan penomoran otomatis (default:
+                angka) di depan setiap item.
+              </p>
+
+              <h5 class="mt-3">Note Penting:</h5>
+              <p>
+                Anda dapat mengubah jenis penomoran menggunakan atribut
+                <code>type</code> (misalnya <code>type="A"</code> untuk huruf
+                kapital).
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- ol END -->
+        <!-- table START -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTable">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseTable"
+              aria-expanded="false"
+              aria-controls="collapseTable"
+            >
+              22. Tabel
+              <span class="tag-code">&lt;table&gt;&lt;/table&gt;</span>
+            </button>
+          </h2>
+          <div
+            id="collapseTable"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingTable"
+            data-bs-parent="#modulHtmlAccordion"
+          >
+            <div class="accordion-body">
+              <h5>Penjelasan:</h5>
+              <p>
+                Tag <span class="tag-code">&lt;table&gt;</span> mendefinisikan
+                tabel data. Tag ini berfungsi sebagai wadah untuk semua elemen
+                tabel lainnya.
+              </p>
+              <h5 class="mt-3">Penggunaan:</h5>
+
+              <h5 class="mt-3">Output:</h5>
+              <p>Tabel yang belum diberi gaya CSS (tampak polos).</p>
+
+              <h5 class="mt-3">Note Penting:</h5>
+              <p>
+                Selalu gunakan tag semantik <code>&lt;thead&gt;</code>,
+                <code>&lt;tbody&gt;</code>, dan <code>&lt;tfoot&gt;</code>.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- table END -->
+        <!-- tr td th START -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTableCells">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseTableCells"
+              aria-expanded="false"
+              aria-controls="collapseTableCells"
+            >
+              23. Baris & Sel
+              <span class="tag-code">&lt;tr&gt;, &lt;td&gt;, &lt;th&gt;</span>
+            </button>
+          </h2>
+          <div
+            id="collapseTableCells"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingTableCells"
+            data-bs-parent="#modulHtmlAccordion"
+          >
+            <div class="accordion-body">
+              <h5>Penjelasan:</h5>
+              <p>
+                Tag-tag ini menyusun isi tabel:
+                <span class="tag-code">&lt;tr&gt;</span> (Table Row),
+                <span class="tag-code">&lt;td&gt;</span> (Table Data), dan
+                <span class="tag-code">&lt;th&gt;</span> (Table Header).
+              </p>
+              <h5 class="mt-3">Penggunaan:</h5>
+
+              <h5 class="mt-3">Output:</h5>
+              <p>Sel header (th) secara otomatis akan dicetak tebal.</p>
+
+              <h5 class="mt-3">Note Penting:</h5>
+              <p>
+                Gunakan atribut <code>colspan</code> atau
+                <code>rowspan</code> pada <code>&lt;td&gt;</code> atau
+                <code>&lt;th&gt;</code> untuk menggabungkan sel.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- tr td th END -->
+        <!-- BAGIAN 3 END -->
+        <!-- BAGIAN 4 START -->
+        <h3 class="mt-5 mb-3">Bagian 4: Formulir Interaktif</h3>
+        <!-- form START -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingForm">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseForm"
+              aria-expanded="false"
+              aria-controls="collapseForm"
+            >
+              24. Formulir
+              <span class="tag-code">&lt;form&gt;&lt;/form&gt;</span>
+            </button>
+          </h2>
+          <div
+            id="collapseForm"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingForm"
+            data-bs-parent="#modulHtmlAccordion"
+          >
+            <div class="accordion-body">
+              <h5>Penjelasan:</h5>
+              <p>
+                Tag <span class="tag-code">&lt;form&gt;</span> adalah wadah
+                untuk semua elemen input pengguna. Tag ini mengumpulkan data
+                pengguna dan mengirimkannya ke server.
+              </p>
+              <h5 class="mt-3">Penggunaan:</h5>
+
+              <h5 class="mt-3">Output:</h5>
+              <p>Kontainer yang menampung semua elemen input formulir.</p>
+
+              <h5 class="mt-3">Note Penting:</h5>
+              <ul>
+                <li>
+                  <code>action</code>: URL (alamat server) tempat data formulir
+                  akan dikirim.
+                </li>
+                <li>
+                  <code>method</code>: Metode HTTP yang digunakan (umumnya
+                  <code>GET</code> atau <code>POST</code>).
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- form END -->
+        <!-- input label START -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingInput">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseInput"
+              aria-expanded="false"
+              aria-controls="collapseInput"
+            >
+              25. Input & Label
+              <span class="tag-code">&lt;input&gt; &amp; &lt;label&gt;</span>
+            </button>
+          </h2>
+          <div
+            id="collapseInput"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingInput"
+            data-bs-parent="#modulHtmlAccordion"
+          >
+            <div class="accordion-body">
+              <h5>Penjelasan:</h5>
+              <p>
+                <span class="tag-code">&lt;input&gt;</span> adalah elemen paling
+                serbaguna untuk menerima data.
+                <span class="tag-code">&lt;label&gt;</span> memberikan deskripsi
+                pada input.
+              </p>
+              <h5 class="mt-3">Penggunaan:</h5>
+
+              <h5 class="mt-3">Output:</h5>
+              <p>Kotak teks standar di halaman yang siap diisi.</p>
+
+              <h5 class="mt-3">Note Penting:</h5>
+              <p>
+                Hubungkan <code>&lt;label&gt;</code> ke
+                <code>&lt;input&gt;</code> menggunakan atribut
+                <code>for</code> dan <code>id</code> yang cocok.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- input label END -->
+        <!-- button dan textarea START -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingButton">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseButton"
+              aria-expanded="false"
+              aria-controls="collapseButton"
+            >
+              26. Tombol & Area Teks
+              <span class="tag-code"
+                >&lt;button&gt; &amp; &lt;textarea&gt;</span
+              >
+            </button>
+          </h2>
+          <div
+            id="collapseButton"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingButton"
+            data-bs-parent="#modulHtmlAccordion"
+          >
+            <div class="accordion-body">
+              <h5>Penjelasan:</h5>
+              <p>
+                <span class="tag-code">&lt;button&gt;</span> digunakan untuk
+                tombol yang dapat diklik.
+                <span class="tag-code">&lt;textarea&gt;</span> digunakan untuk
+                menerima input teks multi-baris (misalnya komentar).
+              </p>
+              <h5 class="mt-3">Penggunaan:</h5>
+
+              <h5 class="mt-3">Output:</h5>
+              <p>
+                Tombol kirim (submit) dan kotak besar untuk komentar muncul di
+                halaman.
+              </p>
+
+              <h5 class="mt-3">Note Penting:</h5>
+              <p>
+                Selalu tentukan atribut <code>type</code> pada
+                <code>&lt;button&gt;</code>.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- button dan textarea END -->
+        <!-- BAGIAN 4 END -->
+      </div>
+
+      <!-- Back Button -->
       <a href="../index.html" class="btn btn-secondary mt-4"
         >← Kembali ke Halaman Utama</a
       >

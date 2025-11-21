@@ -1,23 +1,50 @@
 .accordion-body img {
-            max-width: 100%; 
-            height: auto;   
-            display: block; 
-            border: 1px solid #ddd;
-            border-radius: .25rem;
-            margin-top: 10px;
-        }
-        .card-body img {
-            max-width: 100%;
-            height: auto;
-            border: 1px solid #ddd;
-            border-radius: .25rem;
-            margin-top: 10px;
-        }
-        .tag-code {
-            font-family: monospace;
-            font-size: 1.1em;
-            color: #0d6efd;
-            background-color: #e9f2ff;
-            padding: 2px 4px;
-            border-radius: 3px;
-        }
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  margin-top: 10px;
+}
+.card-body img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  margin-top: 10px;
+}
+.tag-code {
+  font-family: monospace;
+  font-size: 1.1em;
+  color: #0d6efd;
+  background-color: #e9f2ff;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+/* CODE BOX */
+.code-box {
+  background-color: #212529;
+  color: #e9ecef;
+  border: 1px solid #495057;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  overflow-x: auto;
+}
+
+.code-box pre {
+  margin: 0;
+  padding: 0;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.code-box code {
+  font-family: var(--bs-font-monospace);
+  font-size: 0.9em;
+  color: inherit;
+  background-color: transparent;
+  padding: 0;
+}
