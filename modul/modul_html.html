@@ -48,6 +48,25 @@
         >← Kembali ke Halaman Utama</a
       >
       <hr />
+      <h3>Contoh Struktur Dasar Dokumen HTML5 Sederhana</h3>
+      <div class="code-box">
+        <pre>
+          <code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="id"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Judul Halaman&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Halo, Dunia!&lt;/h1&gt;
+  &lt;p&gt;Selamat datang di modul HTML.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+          </code>
+        </pre>
+      </div>
 
       <!-- ACCORDION START -->
       <div class="accordion" id="modulHtmlAccordion">
@@ -77,18 +96,12 @@
             <div class="accordion-body">
               <h5>Penjelasan:</h5>
               <p>
-                Deklarasi
-                <span class="tag-code">&lt;!DOCTYPE html&gt;</span> harus
-                menjadi baris pertama dalam kode HTML kamu. Tujuannya adalah
-                memberi tahu browser bahwa ini adalah dokumen HTML5. Deklarasi
-                ini merupakan sebuah instruksi kunci yang membuat browser masuk
-                ke Standards Mode (Mode Standar), memastikan kode HTML dan CSS
-                dibaca dan ditampilkan secara benar sesuai dengan standar World
-                Wide Web Consortium (W3C), sehingga tampilan website menjadi
-                konsisten di berbagai browser modern. Jika deklarasi ini
-                dihilangkan, browser bisa saja masuk ke Quirks Mode (Mode Aneh)
-                yang akan menyebabkan tampilan halaman menjadi tidak terduga
-                atau rusak karena meniru perilaku browser-browser kuno.
+                Kode <span class="tag-code">&lt;!DOCTYPE html&gt;</span> wajib
+                ditulis di baris paling atas. Ini berfungsi memberi tahu
+                browser: "Halo, saya menggunakan HTML5 (versi terbaru)!". Tanpa
+                kode ini, tampilan websitemu mungkin akan terlihat berantakan
+                atau aneh di beberapa browser karena dianggap menggunakan versi
+                kuno.
               </p>
 
               <h5 class="mt-3">Penggunaan:</h5>
@@ -97,19 +110,19 @@
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
-  ...
+  &lt;!-- Informasi meta --&gt;
 &lt;/head&gt;
 &lt;body&gt;
-  ...               
+  &lt;!-- Isi website --&gt;
 &lt;/body&gt;
 &lt;/html&gt;
                 </code></pre>
               </div>
               <h5 class="mt-3">Note Penting:</h5>
               <p>
-                Ini bukan tag HTML, melainkan instruksi untuk browser dan harus
-                diletakkan di baris paling awal. Jadi, tidak perlu untuk membuat
-                <code>&lt;/!DOCTYPE html&gt;</code>
+                Ini bukan tag HTML biasa, jadi tidak perlu penutup seperti
+                <code>&lt;/!DOCTYPE&gt;</code>. Cukup tulis satu kali di awal
+                file.
               </p>
             </div>
           </div>
@@ -140,44 +153,27 @@
             <div class="accordion-body">
               <h5>Penjelasan:</h5>
               <p>
-                <span class="tag-code">&lt;html&gt;</span> adalah elemen akar
-                (root element) yang wajib ada dan membungkus seluruh konten dari
-                sebuah halaman HTML, di luar deklarasi
-                <code>&lt;!DOCTYPE html&gt;</code>. Elemen ini berfungsi sebagai
-                wadah utama yang menandai awal dan akhir dari dokumen HTML
-                secara keseluruhan, memberitahu web browser bahwa semua yang ada
-                di dalamnya adalah kode HTML. Tag ini juga berfungsi sebagai
-                tempat untuk menetapkan atribut global, yang paling umum adalah
-                atribut lang (contoh: <code>&lt;html lang="id"&gt;</code>).
-                Atribut ini sangat penting karena menentukan bahasa utama konten
-                halaman (dalam contoh ini, Indonesia), yang membantu mesin
-                pencari (SEO) untuk mengindeks halaman dengan benar dan membantu
-                perangkat pembaca layar (teknologi aksesibilitas) untuk
-                membacakan teks dengan intonasi yang tepat. Semua elemen penting
-                lainnya, yaitu <code>&lt;head&gt;</code> dan
-                <code>&lt;body&gt;</code>, harus diletakkan sebagai anak
-                langsung dari tag <code>&lt;html&gt;</code> dan
-                <code>&lt;/html&gt;</code>.
+                Tag <span class="tag-code">&lt;html&gt;</span> adalah "bungkus
+                utama" dari seluruh kodinganmu. Semua kode lain (kecuali
+                DOCTYPE) harus berada di dalam tag ini. Kita juga bisa memberi
+                tahu bahasa utama website di sini (contoh: Indonesia atau
+                Inggris).
               </p>
 
               <h5 class="mt-3">Penggunaan:</h5>
               <div class="code-box">
                 <pre><code class="language-html">
 &lt;!DOCTYPE html&gt; 
-&lt;html lang="id"&gt;  
-&lt;head&gt;
-        
-&lt;/head&gt;
-&lt;body&gt;
-        
-&lt;/body&gt;
+&lt;html lang="id"&gt; 
+  &lt;!-- Semua kode lain ada di dalam sini --&gt;
 &lt;/html&gt;</code></pre>
               </div>
 
               <h5 class="mt-3">Note Penting:</h5>
               <p>
-                Sertakan atribut <code>lang</code> (contoh:
-                <code>lang="id"</code>) untuk menentukan bahasa dokumen.
+                Gunakan <code>lang="id"</code> untuk website Bahasa Indonesia
+                atau <code>lang="en"</code> untuk Inggris. Ini membantu Google
+                memahami isi websitemu.
               </p>
             </div>
           </div>
@@ -210,14 +206,11 @@
             <div class="accordion-body">
               <h5>Penjelasan:</h5>
               <p>
-                Tag <span class="tag-code">&lt;head&gt;</span> berfungsi sebagai
-                wadah metadata atau informasi tentang dokumen HTML itu sendiri.
-                Letaknya harus berada tepat di dalam tag
-                <code>&lt;html&gt;</code>, sebelum tag
-                <code>&lt;body&gt;</code>. Metadata adalah data tentang data;
-                dalam konteks web, ini adalah informasi yang tidak ditampilkan
-                secara langsung pada halaman web oleh browser kepada pengguna,
-                tetapi sangat penting untuk berbagai fungsi.
+                Tag <span class="tag-code">&lt;head&gt;</span> berisi informasi
+                rahasia atau pengaturan website yang **tidak ditampilkan**
+                langsung kepada pengunjung di halaman utama. Isinya biasanya
+                judul tab browser, pengaturan karakter, dan link ke file CSS
+                (hiasan).
               </p>
 
               <h5 class="mt-3">Penggunaan:</h5>
@@ -225,27 +218,26 @@
                 <pre><code>
 &lt;head&gt;
   &lt;meta charset="UTF-8"&gt;
-  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-  &lt;title&gt;Document&lt;/title&gt;
+  &lt;title&gt;Judul di Tab Browser&lt;/title&gt;
 &lt;/head&gt;
                 </code></pre>
               </div>
 
               <h5 class="mt-3">Output:</h5>
               <p>
-                pada baris kode ini hanya teks dalam
-                <code>&lt;title&gt;</code> yang terlihat di tab browser.
+                Hanya teks di dalam <code>&lt;title&gt;</code> yang akan muncul
+                di bagian paling atas tab browser (seperti Chrome/Edge).
               </p>
               <img
                 src="../assets/img/Modul_HTML/head/head2_img.png"
                 alt="Output judul halaman pada tab browser"
               />
+              <!-- MAINTENANCE -->
 
               <h5 class="mt-3">Note Penting:</h5>
               <p>
-                Elemen-elemen penting di dalamnya termasuk
-                <code>&lt;title&gt;</code>, <code>&lt;meta&gt;</code>, dan
-                <code>&lt;link&gt;</code> ke CSS.
+                Jangan menaruh konten seperti paragraf atau gambar di dalam
+                <code>&lt;head&gt;</code>. Tempatnya bukan di sini!
               </p>
             </div>
           </div>
@@ -275,12 +267,10 @@
             <div class="accordion-body">
               <h5>Penjelasan:</h5>
               <p>
-                Tag <span class="tag-code">&lt;body&gt;</span> adalah tag yang
-                paling penting dalam sebuah dokumen HTML karena berfungsi
-                sebagai wadah utama untuk semua konten yang terlihat oleh
-                pengguna web. Tag ini harus diletakkan setelah tag
-                <code>&lt;head&gt;</code> dan merupakan anak langsung dari tag
-                <code>&lt;html&gt;</code>.
+                Tag <span class="tag-code">&lt;body&gt;</span> adalah tempat
+                untuk semua hal yang **ingin kamu tampilkan** kepada pengunjung.
+                Teks, gambar, video, tombol, tabel, semuanya wajib ditulis di
+                dalam tag ini.
               </p>
 
               <h5 class="mt-3">Penggunaan:</h5>
@@ -290,8 +280,8 @@
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;body&gt;
-  &lt;h1&gt;Judul ini akan terlihat di body&lt;/h1&gt;
-  &lt;p&gt;Paragraf ini juga akan terlihat di body.&lt;/p&gt;
+  &lt;h1&gt;Judul Besar&lt;/h1&gt;
+  &lt;p&gt;Ini adalah paragraf yang bisa dibaca pengunjung.&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;
                   </code>
@@ -299,18 +289,15 @@
               </div>
 
               <h5 class="mt-3">Output:</h5>
-              <p>
-                Semua elemen seperti heading dan paragraf akan terlihat di
-                halaman:
-              </p>
+              <p>Semua elemen di dalam body akan terlihat di layar:</p>
               <img
                 src="../assets/img/Modul_HTML/body/body2_img.png"
                 alt="Output teks yang terlihat di body halaman"
               />
-
+              <!-- MAINTENANCE -->
               <h5 class="mt-3">Note Penting:</h5>
               <p>
-                Setiap dokumen HTML hanya boleh memiliki satu tag
+                Satu file HTML hanya boleh punya satu tag
                 <code>&lt;body&gt;</code>.
               </p>
             </div>
@@ -342,33 +329,26 @@
             <div class="accordion-body">
               <h5>Penjelasan:</h5>
               <p>
-                <span class="tag-code">&lt;p&gt;</span> adalah salah satu elemen
-                yang ada pada HTML yang digunakan untuk mendefinisikan sebuah
-                paragraf dalam dokumen web. Tag ini merupakan salah satu elemen
-                blok level yang paling sering digunakan dalam HTML. Secara
-                default, tag ini memberikan spasi vertical sebelum dan sesudah
-                teks, sehingga memisahkan paragraf satu dengan lainnya. Dengan
-                menggunakannya maka akan menghasilkan teks yang lebih rapi dan
-                mudah dibaca oleh pengunjung website.
+                <span class="tag-code">&lt;p&gt;</span> digunakan untuk membuat
+                **paragraf**. Browser secara otomatis akan memberikan jarak
+                (spasi) kosong di atas dan di bawah paragraf, supaya teks tidak
+                menumpuk dan lebih enak dibaca.
               </p>
 
               <h5 class="mt-3">Penggunaan:</h5>
               <div class="code-box">
                 <pre>
                   <code>
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
 &lt;body&gt;
-  &lt;p&gt;ini adalah teks!&lt;/p&gt;
-  &lt;p&gt;ini juga teks!&lt;/p&gt;
+  &lt;p&gt;Ini adalah paragraf pertama.&lt;/p&gt;
+  &lt;p&gt;Ini adalah paragraf kedua.&lt;/p&gt;
 &lt;/body&gt;
-&lt;/html&gt;
                 </code>
               </pre>
               </div>
 
               <h5 class="mt-3">Output:</h5>
-              <p>Dua blok teks terpisah dengan jarak vertikal di antaranya:</p>
+              <p>Dua blok teks terpisah dengan jarak vertikal:</p>
               <img
                 src="../assets/img/Modul_HTML/p img/p2_img.png"
                 alt="Output dua paragraf dengan spasi"
@@ -376,8 +356,8 @@
 
               <h5 class="mt-3">Note Penting:</h5>
               <p>
-                Jangan gunakan <code>&lt;p&gt;</code> untuk menyusun list atau
-                elemen non-paragraf lainnya.
+                Jangan gunakan <code>&lt;p&gt;</code> jika kamu hanya ingin
+                membuat judul besar (gunakan Heading).
               </p>
             </div>
           </div>
@@ -395,7 +375,7 @@
               aria-expanded="false"
               aria-controls="collapseA"
             >
-              6. Tautan <span class="tag-code">&lt;a&gt;&lt;/a&gt;</span>
+              6. Tautan / Link <span class="tag-code">&lt;a&gt;&lt;/a&gt;</span>
             </button>
           </h2>
           <div
@@ -407,35 +387,34 @@
             <div class="accordion-body">
               <h5>Penjelasan:</h5>
               <p>
-                Tag <span class="tag-code">&lt;a&gt;</span> (anchor) membuat
-                hyperlink. Elemen ini mengubah teks atau objek menjadi tautan
-                yang dapat diklik.
+                Tag <span class="tag-code">&lt;a&gt;</span> (Anchor) berfungsi
+                membuat teks atau gambar menjadi tombol **link** yang bisa
+                diklik untuk pindah ke halaman lain atau website lain.
               </p>
 
               <h5 class="mt-3">Penggunaan:</h5>
-              <p>Ketika kalian klik link dari <code>&lt;a&gt;&lt;/a&gt;</code>, kalian bakal dialihkan ke link yang kalian ketik di href.</p>
+              <p>Isi atribut <code>href="..."</code> dengan alamat tujuan.</p>
               <div class="code-box">
                 <pre>
                   <code>
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;body&gt;
-  &lt;a href="https://www.instagram.com/rhnkmlw_/" target="_blank"&gt;Follow IG Pak Rehan yes!!!&lt;/a&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+
+&lt;a href="https://www.instagram.com/rhnkmlw_/" target="_blank"&gt;Follow IG Pak Rehan yes!!!&lt;/a&gt;
+
                 </code>
               </pre>
               </div>
               <h5 class="mt-3">Output:</h5>
-              <p>Teks yang diklik akan mengarahkan ke URL tujuan:</p>
+              <p>Teks biru bergaris bawah yang bisa diklik:</p>
 
-              <img src="../assets/img/Modul_HTML/a/a_img.png" alt="">
+              <img
+                src="../assets/img/Modul_HTML/a/a_img.png"
+                alt="Contoh Link"
+              />
 
               <h5 class="mt-3">Note Penting:</h5>
               <p>
-                Atribut <code>href</code> adalah wajib untuk menentukan alamat
-                tujuan. Gunakan <code>target="_blank"</code> untuk membuka
-                tautan di tab baru.
+                Tambahkan <code>target="_blank"</code> jika ingin link terbuka
+                di **tab baru** (supaya website kita tidak tertutup).
               </p>
             </div>
           </div>
@@ -464,33 +443,42 @@
             <div class="accordion-body">
               <h5>Penjelasan:</h5>
               <p>
-                Tag <span class="tag-code">&lt;img&gt;</span> menyematkan gambar
-                ke dalam halaman.
+                Tag <span class="tag-code">&lt;img&gt;</span> digunakan untuk
+                menampilkan **gambar** di halaman web. Tag ini unik karena tidak
+                punya penutup (tidak ada &lt;/img&gt;).
               </p>
 
               <h5 class="mt-3">Penggunaan:</h5>
-              <p>lorem ipsum</p>
               <div class="code-box">
                 <pre>
                   <code>
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;body&gt;
-  &lt;img src="*ganti dengan image mu*" alt="*Deskripsi Gambar*"&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+&lt;img src="*ganti dengan direktori image mu*" alt="*Deskripsi Gambar*"&gt;
+                  </code>
+                </pre>
+              </div>
+              <hr />
+              <h6>
+                Ini adalah contoh dari menghubungkan direktori gambar pada src
+              </h6>
+              <div class="code-box">
+                <pre>
+                  <code>
+&lt;img src="materi/gambar/mrbean.jpg" alt="Gambar Contoh"&gt;
                   </code>
                 </pre>
               </div>
 
               <h5 class="mt-3">Output:</h5>
-              <p>Gambar yang disematkan akan muncul di halaman:</p>
+              <img
+                src="../assets/img/Modul_HTML/img img/image_img.png"
+                alt=""
+              />
 
               <h5 class="mt-3">Note Penting:</h5>
               <p>
-                Atribut <code>src</code> dan <code>alt</code> adalah wajib.
-                Gunakan <code>width</code> dan <code>height</code> untuk
-                menentukan ukuran.
+                Wajib isi <code>alt="..."</code>! Teks ini akan muncul jika
+                gambar gagal dimuat (misal internet lambat) dan membantu
+                teman-teman tunanetra memahami isi gambar.
               </p>
             </div>
           </div>
@@ -519,21 +507,28 @@
             <div class="accordion-body">
               <h5>Penjelasan:</h5>
               <p>
-                Tag <span class="tag-code">&lt;hr&gt;</span> merepresentasikan
-                garis pemisah tematik (misalnya pergantian subjek) dan
-                ditampilkan sebagai garis horizontal. Ini adalah tag
-                *self-closing*.
+                Tag <span class="tag-code">&lt;hr&gt;</span> digunakan untuk
+                membuat **garis lurus mendatar** pembatas. Biasanya dipakai
+                untuk memisahkan antar topik cerita. Tag ini juga tidak punya
+                penutup.
               </p>
 
               <h5 class="mt-3">Penggunaan:</h5>
+              <div class="code-box">
+                <pre><code class="language-html">
+&lt;p&gt;Paragraf pertama tentang topik A.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Paragraf kedua tentang topik B.&lt;/p&gt;
+                </code></pre>
+              </div>
 
               <h5 class="mt-3">Output:</h5>
               <p>Garis horizontal penuh akan muncul di antara konten:</p>
-
+              <img src="../assets/img/Modul_HTML/hr img/hr_img.png" alt="" />
               <h5 class="mt-3">Note Penting:</h5>
               <p>
-                Ini adalah tag *self-closing* dan digunakan untuk pemisahan
-                konten, bukan untuk dekorasi.
+                Gunakan ini untuk memisahkan konten secara tema, bukan sekadar
+                untuk hiasan garis (untuk hiasan lebih baik pakai CSS).
               </p>
             </div>
           </div>
@@ -562,23 +557,34 @@
             <div class="accordion-body">
               <h5>Penjelasan:</h5>
               <p>
-                Tag <span class="tag-code">&lt;br&gt;</span> menyisipkan jeda
-                baris tunggal (line break). Berguna untuk puisi atau alamat di
-                mana pemisahan baris penting. Ini adalah tag *self-closing*.
+                Tag <span class="tag-code">&lt;br&gt;</span> (Break) berfungsi
+                seperti menekan tombol **Enter** di keyboard. Ini memaksa teks
+                turun ke baris baru tanpa membuat jarak spasi paragraf yang
+                lebar. Cocok untuk menulis alamat atau puisi.
               </p>
 
               <h5 class="mt-3">Penggunaan:</h5>
+              <div class="code-box">
+                <pre><code class="language-html">
+&lt;p&gt;
+  Jalan Mawar No. 12&lt;br&gt;
+  Jakarta Selatan,&lt;br&gt;
+  Indonesia
+&lt;/p&gt;
+                </code></pre>
+              </div>
 
               <h5 class="mt-3">Output:</h5>
               <p>
                 Teks akan dilanjutkan di baris baru tanpa membuat paragraf baru:
               </p>
+              <img src="../assets/img/Modul_HTML/br img/br_img.png" alt="" />
 
               <h5 class="mt-3">Note Penting:</h5>
               <p>
-                Jangan gunakan beberapa tag
-                <code>&lt;br&gt;</code> berturut-turut untuk menambah spasi
-                vertikal. Gunakan CSS Margin atau Padding pada elemen lain.
+                Jangan gunakan <code>&lt;br&gt;</code> berkali-kali hanya untuk
+                membuat jarak kosong yang luas. Gunakan CSS Margin/Padding untuk
+                itu.
               </p>
             </div>
           </div>
@@ -595,7 +601,7 @@
               aria-expanded="false"
               aria-controls="collapsePre"
             >
-              10. Pre-formatted Text
+              10. Teks Terformat
               <span class="tag-code">&lt;pre&gt;&lt;/pre&gt;</span>
             </button>
           </h2>
@@ -609,22 +615,33 @@
               <h5>Penjelasan:</h5>
               <p>
                 Tag <span class="tag-code">&lt;pre&gt;</span> menampilkan teks
-                dengan format dan spasi yang dipertahankan persis seperti saat
-                diketik dalam kode sumber. Menggunakan font monospace.
+                **persis apa adanya** sesuai yang kamu ketik di kode, termasuk
+                spasi yang banyak dan enter. Biasanya font-nya berubah menjadi
+                gaya mesin ketik (monospace).
               </p>
 
               <h5 class="mt-3">Penggunaan:</h5>
+              <div class="code-box">
+                <pre><code class="language-html">
+&lt;pre&gt;
+  Teks ini akan    mempertahankan
+      setiap spasi
+  dan baris baru.
+&lt;/pre&gt;
+                </code></pre>
+              </div>
 
               <h5 class="mt-3">Output:</h5>
               <p>
                 Teks akan ditampilkan persis seperti format yang Anda ketik,
                 termasuk spasi dan baris baru:
               </p>
+              <img src="../assets/img/Modul_HTML/pre img/pre_img.png" alt="" />
 
               <h5 class="mt-3">Note Penting:</h5>
               <p>
-                Sangat berguna untuk menampilkan blok kode pemrograman atau
-                ASCII Art.
+                Sangat berguna jika kamu ingin menampilkan contoh kode program
+                (codingan) di websitemu.
               </p>
             </div>
           </div>
@@ -646,7 +663,8 @@
             >
               11. Format Teks
               <span class="tag-code"
-                >&lt;b&gt;, &lt;strong&gt;, &lt;em&gt;, dll.</span
+                >&lt;b&gt;, &lt;strong&gt;, &lt;em&gt;, &lt;mark&gt;,
+                &lt;del&gt;, &lt;ins&gt;, &lt;sub&gt;, &lt;sup&gt;</span
               >
             </button>
           </h2>
@@ -661,17 +679,17 @@
               <p>HTML menyediakan tag khusus untuk memformat teks:</p>
               <ul>
                 <li>
-                  **Visual (Tidak Semantik):**
+                  Visual (Tidak Semantik):
                   <span class="tag-code">&lt;b&gt;</span> (Bold),
                   <span class="tag-code">&lt;i&gt;</span> (Italic).
                 </li>
                 <li>
-                  **Semantik (Penting):**
+                  Semantik (Penting):
                   <span class="tag-code">&lt;strong&gt;</span> (Teks penting),
                   <span class="tag-code">&lt;em&gt;</span> (Penekanan).
                 </li>
                 <li>
-                  **Lainnya:**
+                  Lainnya:
                   <span class="tag-code">&lt;mark&gt;</span> (Highlight),
                   <span class="tag-code">&lt;del&gt;</span> (Teks dicoret),
                   <span class="tag-code">&lt;ins&gt;</span> (Teks baru),
@@ -681,10 +699,38 @@
               </ul>
 
               <h5 class="mt-3">Penggunaan:</h5>
+              <div class="code-box">
+                <pre><code class="language-html">
+&lt;p&gt;
+  &lt;b&gt;Tebal&lt;/b&gt; (Bold/Teks Tebal) dan &lt;strong&gt;Penting&lt;/strong&gt;(Teks Penting)
+&lt;/p&gt;
+&lt;p&gt;
+  &lt;i&gt;Miring&lt;/i&gt; (Italic/Teks Miring) dan &lt;em&gt;Ditekankan&lt;/em&gt; (Teks Penekanan)
+&lt;/p&gt;
+&lt;p&gt;
+  &lt;mark&gt;HighLight&lt;/mark&gt; (Teks Highlight)
+&lt;/p&gt;
+&lt;p&gt;
+  &lt;del&gt;teks dicoret&lt;/del&gt; (Teks Dicoret)
+&lt;/p&gt;
+&lt;p&gt;
+  &lt;ins&gt;teks dicoret&lt;/ins&gt; (Teks Baru)
+&lt;/p&gt;
+&lt;p&gt;
+  H&lt;sub&gt;2&lt;/sub&gt;O (Teks Subscript)
+&lt;/p&gt;
+&lt;p&gt;
+  E = mc&lt;sup&gt;2&lt;/sup&gt; (Teks Superscript)
+&lt;/p&gt;
+                </code></pre>
+              </div>
 
               <h5 class="mt-3">Output:</h5>
               <p>Hasil visual dari semua tag pemformatan teks:</p>
-
+              <img
+                src="../assets/img/Modul_HTML/format teks img/format_teks_img.png"
+                alt=""
+              />
               <h5 class="mt-3">Note Penting:</h5>
               <p>
                 Sebaiknya selalu gunakan tag **semantik** (<span
@@ -723,23 +769,32 @@
             <div class="accordion-body">
               <h5>Penjelasan:</h5>
               <p>
-                Komentar digunakan untuk menjelaskan kode, meninggalkan catatan,
-                atau menonaktifkan kode sementara. Komentar **sepenuhnya
-                diabaikan** oleh browser.
+                Komentar adalah catatan rahasia untuk programmer. Tulisan yang
+                ada di dalam komentar **tidak akan muncul di browser**. Ini
+                berguna untuk memberi tanda atau pengingat pada kodinganmu
+                sendiri.
               </p>
 
               <h5 class="mt-3">Penggunaan:</h5>
+              <p>Gunakan ini untuk sebagai *note* kode kamu sendiri</p>
+              <div class="code-box">
+                <pre><code class="language-html">
+&lt;!-- Ini adalah komentar, tidak akan tampil di browser --&gt;
+&lt;p&gt;Ini paragraf yang tampil.&lt;/p&gt;
+                </code></pre>
+              </div>
 
               <h5 class="mt-3">Output:</h5>
-              <p>
-                Komentar tidak muncul di halaman, hanya terlihat saat melihat
-                sumber halaman (*view page source*).
-              </p>
+              <p>Komentar tidak muncul di halaman.</p>
+              <img
+                src="../assets/img/Modul_HTML/komentar img/komentar_img.png"
+                alt=""
+              />
 
               <h5 class="mt-3">Note Penting:</h5>
               <p>
-                Selalu gunakan komentar untuk membuat kode Anda lebih mudah
-                dipahami oleh orang lain (atau diri Anda sendiri di masa depan).
+                Selalu gunakan komentar untuk membuat kode kamu lebih mudah
+                dipahami oleh orang lain (atau diri kamu sendiri di masa depan).
               </p>
             </div>
           </div>
@@ -757,7 +812,7 @@
               aria-controls="collapseAttrGlobal"
             >
               13. Atribut Global
-              <span class="tag-code">(class, id, style, title)</span>
+              <span class="tag-code">(class & id)</span>
             </button>
           </h2>
           <div
@@ -769,12 +824,31 @@
             <div class="accordion-body">
               <h5>Penjelasan:</h5>
               <p>
-                Atribut Global dapat digunakan pada hampir semua elemen HTML
-                untuk memberikan informasi tambahan atau memodifikasi
-                tampilan/perilaku elemen.
+                Atribut Global bisa dipasang di hampir semua tag. Dua yang
+                paling sering dipakai adalah:
               </p>
+              <ul>
+                <li>
+                  <strong>class:</strong> Memberi nama "grup" pada elemen.
+                  Banyak elemen bisa punya class yang sama. (Contoh:
+                  <code>class="kotak-merah"</code>).
+                </li>
+                <li>
+                  <strong>id:</strong> Memberi nama "unik" (seperti KTP). Dalam
+                  satu halaman, tidak boleh ada dua elemen dengan ID yang sama.
+                  (Contoh: <code>id="tombol-login"</code>).
+                </li>
+              </ul>
 
               <h5 class="mt-3">Penggunaan:</h5>
+              <div class="code-box">
+                <pre><code class="language-html">
+&lt;p class="teks-merah"&gt;Paragraf ini merah.&lt;/p&gt;
+&lt;p class="teks-merah"&gt;Ini juga merah (satu grup).&lt;/p&gt;
+
+&lt;h1 id="judul-utama"&gt;Judul Spesial&lt;/h1&gt;
+                </code></pre>
+              </div>
 
               <h5 class="mt-3">Note Penting:</h5>
               <ul>
@@ -785,11 +859,6 @@
                 <li>
                   <code>id</code>: Untuk mengidentifikasi satu elemen unik
                   (penting untuk JavaScript).
-                </li>
-                <li><code>style</code>: Untuk styling CSS secara inline.</li>
-                <li>
-                  <code>title</code>: Menampilkan teks tooltip saat kursor
-                  diarahkan ke elemen.
                 </li>
               </ul>
             </div>
@@ -807,7 +876,7 @@
               aria-expanded="false"
               aria-controls="collapseAttrSpecific"
             >
-              14. Atribut Wajib
+              14. Atribut Wajib (Link & Gambar)
               <span class="tag-code"
                 >&lt;a&gt; (href, target) &amp; &lt;img&gt; (src, alt)</span
               >
@@ -821,27 +890,50 @@
           >
             <div class="accordion-body">
               <h5>Penjelasan:</h5>
-              <p>
-                Beberapa tag memiliki atribut yang wajib atau sangat penting
-                untuk fungsionalitasnya.
-              </p>
+              <p>Beberapa tag tidak akan berguna tanpa atribut khususnya.</p>
+              <ul>
+                <li>
+                  Link <code>&lt;a&gt;</code> wajib punya
+                  <strong>href</strong> (alamat tujuan).
+                </li>
+                <li>
+                  Gambar <code>&lt;img&gt;</code> wajib punya
+                  <strong>src</strong> (sumber file gambar).
+                </li>
+              </ul>
 
               <h5 class="mt-3">Penggunaan:</h5>
+              <div class="code-box">
+                <pre><code class="language-html">
+&lt;!-- Link ke Google --&gt;
+&lt;a href="https://google.com"&gt;Ke Google&lt;/a&gt;
+
+&lt;!-- Menampilkan Gambar --&gt;
+&lt;img src="gambar.jpg" alt="Deskripsi Gambar"&gt;
+                </code></pre>
+              </div>
+
+              <h5 class="mt-3">Output:</h5>
+              <img
+                src="../assets/img/Modul_HTML/atribut wajib/atribut_wajib_img.png"
+                alt=""
+              />
 
               <h5 class="mt-3">Note Penting:</h5>
               <ul>
                 <li>
-                  **&lt;a&gt;**: <code>target="_blank"</code> membuka tautan di
-                  tab baru.
+                  <span class="tag-code">&lt;a&gt;</span>:
+                  <code>target="_blank"</code> membuka tautan di tab baru.
                 </li>
                 <li>
-                  **&lt;img&gt;**: <code>alt</code> harus menjelaskan gambar dan
-                  sangat penting untuk aksesibilitas.
+                  <span class="tag-code">&lt;img&gt;</span>:
+                  <code>alt</code> harus menjelaskan gambar dan sangat penting
+                  untuk aksesibilitas.
                 </li>
                 <li>
                   Atribut <code>width</code> dan <code>height</code> pada
-                  <code>&lt;img&gt;</code> membantu browser merender halaman
-                  lebih cepat.
+                  <span class="tag-code">&lt;img&gt;</span> membantu browser
+                  merender halaman lebih cepat.
                 </li>
               </ul>
             </div>
@@ -872,27 +964,46 @@
             <div class="accordion-body">
               <h5>Penjelasan:</h5>
               <p>
-                Tag <span class="tag-code">&lt;style&gt;</span> digunakan untuk
-                menulis aturan CSS langsung di dalam dokumen HTML. Tag ini
-                ditempatkan di dalam bagian <code>&lt;head&gt;</code>.
+                Tag <span class="tag-code">&lt;style&gt;</span> adalah tempat
+                kita menulis kode CSS (kode untuk menghias warna, ukuran,
+                layout) langsung di dalam file HTML. Biasanya diletakkan di
+                bagian <code>&lt;head&gt;</code>.
               </p>
 
               <h5 class="mt-3">Penggunaan:</h5>
+              <div class="code-box">
+                <pre><code class="language-html">
+&lt;head&gt;
+  &lt;style&gt;
+    h1 {
+      color: blue; /* Mengubah judul jadi biru */
+      font-size: 40px;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+                </code></pre>
+              </div>
 
               <h5 class="mt-3">Output:</h5>
               <p>Aturan CSS di dalamnya akan mengubah tampilan elemen HTML.</p>
 
               <h5 class="mt-3">Note Penting:</h5>
               <p>
-                Penggunaan tag <code>&lt;style&gt;</code> hanya disarankan untuk
-                sedikit aturan. Untuk styling yang lebih besar dan terorganisir,
-                gunakan file eksternal.
+                Ini cara cepat untuk menghias. Tapi untuk proyek besar, kita
+                biasanya memisahkan kode CSS di file tersendiri agar rapi.
               </p>
               <hr />
               <div class="alert alert-danger">
                 <p class="mb-0">
-                  <strong>Penting:</strong> Sintaks dan cara penulisan kode CSS
-                  secara lengkap dapat Anda pelajari di **Modul CSS**.
+                  <strong>Info:</strong> Belajar cara menghias website lebih
+                  lengkap di
+                  <button type="button">
+                    <a
+                      href="modul_css.html"
+                      style="text-decoration: none; color: black"
+                      >Modul CSS</a
+                    >
+                  </button>
                 </p>
               </div>
             </div>
@@ -926,19 +1037,29 @@
             <div class="accordion-body">
               <h5>Penjelasan:</h5>
               <p>
-                Tag heading digunakan untuk menentukan pentingnya judul pada
-                hierarki konten. <code>&lt;h1&gt;</code> adalah yang paling
-                penting (terbesar), dan <code>&lt;h6&gt;</code> paling rendah.
+                HTML menyediakan 6 level judul. <code>&lt;h1&gt;</code> adalah
+                Judul Utama (Paling Besar & Penting), sedangkan
+                <code>&lt;h6&gt;</code> adalah sub-judul terkecil.
               </p>
               <h5 class="mt-3">Penggunaan:</h5>
+              <div class="code-box">
+                <pre><code class="language-html">
+&lt;h1&gt;Heading 1 (Paling Besar)&lt;/h1&gt;
+&lt;h2&gt;Heading 2&lt;/h2&gt;
+&lt;h3&gt;Heading 3&lt;/h3&gt;
+&lt;h4&gt;Heading 4&lt;/h4&gt;
+&lt;h5&gt;Heading 5&lt;/h5&gt;
+&lt;h6&gt;Heading 6 (Paling Kecil)&lt;/h6&gt;
+                </code></pre>
+              </div>
 
               <h5 class="mt-3">Output:</h5>
               <p>Ukuran teks yang berbeda untuk setiap tingkatan:</p>
 
               <h5 class="mt-3">Note Penting:</h5>
               <p>
-                Idealnya, setiap halaman hanya memiliki **satu** tag
-                <code>&lt;h1&gt;</code>.
+                Gunakan hanya <strong>satu</strong> <code>&lt;h1&gt;</code> di
+                setiap halaman website sebagai judul utama konten tersebut.
               </p>
             </div>
           </div>
@@ -955,7 +1076,7 @@
               aria-expanded="false"
               aria-controls="collapseDiv"
             >
-              17. Kontainer Blok
+              17. Kontainer Blok / Kotak Pembungkus
               <span class="tag-code">&lt;div&gt;&lt;/div&gt;</span>
             </button>
           </h2>
@@ -968,12 +1089,21 @@
             <div class="accordion-body">
               <h5>Penjelasan:</h5>
               <p>
-                Tag <span class="tag-code">&lt;div&gt;</span> adalah elemen
-                kontainer tingkat blok (block-level) yang paling umum. Digunakan
-                untuk mengelompokkan elemen lain untuk tujuan *styling* (dengan
-                CSS).
+                Tag <span class="tag-code">&lt;div&gt;</span> ibarat sebuah
+                "kardus" atau kotak kosong. Kita menggunakannya untuk
+                mengelompokkan beberapa elemen (misalnya judul + paragraf +
+                gambar) menjadi satu grup, supaya mudah dipindahkan atau
+                diwarnai background-nya.
               </p>
               <h5 class="mt-3">Penggunaan:</h5>
+              <div class="code-box">
+                <pre><code class="language-html">
+&lt;div style="background-color: lightgray; padding: 10px;"&gt;
+  &lt;h2&gt;Artikel 1&lt;/h2&gt;
+  &lt;p&gt;Ini adalah isi artikel yang dibungkus dalam div.&lt;/p&gt;
+&lt;/div&gt;
+                </code></pre>
+              </div>
 
               <h5 class="mt-3">Output:</h5>
               <p>
@@ -983,9 +1113,8 @@
 
               <h5 class="mt-3">Note Penting:</h5>
               <p>
-                Tag <code>&lt;div&gt;</code> adalah tag non-semantik. Gunakan
-                tag semantik HTML5 (seperti <code>&lt;section&gt;</code> atau
-                <code>&lt;article&gt;</code>) jika memungkinkan.
+                Div adalah elemen "Block", artinya dia akan selalu membuat baris
+                baru (memenuhi lebar layar).
               </p>
             </div>
           </div>
@@ -1002,7 +1131,7 @@
               aria-expanded="false"
               aria-controls="collapseSpan"
             >
-              18. Kontainer Inline
+              18. Kontainer Inline / Pembungkus Teks
               <span class="tag-code">&lt;span&gt;&lt;/span&gt;</span>
             </button>
           </h2>
@@ -1015,17 +1144,21 @@
             <div class="accordion-body">
               <h5>Penjelasan:</h5>
               <p>
-                Tag <span class="tag-code">&lt;span&gt;</span> adalah kontainer
-                generik tingkat *inline*. Digunakan untuk mengelompokkan
-                sebagian kecil teks atau elemen *inline* lainnya untuk *styling*
-                tanpa memulai baris baru.
+                Tag <span class="tag-code">&lt;span&gt;</span> mirip dengan div,
+                tapi versi kecilnya. Span digunakan untuk menandai **potongan
+                kecil teks** di dalam kalimat tanpa membuat baris baru. Cocok
+                untuk mewarnai satu kata tertentu.
               </p>
               <h5 class="mt-3">Penggunaan:</h5>
+              <div class="code-box">
+                <pre><code class="language-html">
+&lt;p&gt;Saya suka warna &lt;span style="color: red;"&gt;Merah&lt;/span&gt; sekali.&lt;/p&gt;
+                </code></pre>
+              </div>
 
               <h5 class="mt-3">Output:</h5>
               <p>
-                Hanya teks yang berada dalam <code>&lt;span&gt;</code> yang
-                terpengaruh tanpa mengganggu aliran teks di sekitarnya.
+                Hanya kata "Merah" yang berubah warna, kalimat tetap tersambung.
               </p>
 
               <h5 class="mt-3">Note Penting:</h5>
@@ -1061,13 +1194,41 @@
             <div class="accordion-body">
               <h5>Penjelasan:</h5>
               <p>
-                Tag semantik (seperti <code>&lt;header&gt;</code>,
-                <code>&lt;nav&gt;</code>, <code>&lt;footer&gt;</code>,
-                <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>)
-                memberikan makna pada bagian-bagian halaman, membantu mesin
-                pencari dan alat bantu aksesibilitas memahami struktur konten.
+                Tag Semantik adalah tag yang namanya menjelaskan fungsinya.
+                Daripada cuma pakai <code>&lt;div&gt;</code> untuk semua hal,
+                lebih baik pakai tag ini agar Google paham struktur websitemu:
               </p>
+              <ul>
+                <li>
+                  <code>&lt;header&gt;</code>: Untuk bagian kepala website
+                  (logo/judul).
+                </li>
+                <li><code>&lt;nav&gt;</code>: Untuk menu navigasi.</li>
+                <li>
+                  <code>&lt;footer&gt;</code>: Untuk bagian kaki website
+                  (copyright).
+                </li>
+                <li>
+                  <code>&lt;article&gt;</code>: Untuk konten artikel/berita.
+                </li>
+              </ul>
               <h5 class="mt-3">Penggunaan:</h5>
+              <div class="code-box">
+                <pre><code class="language-html">
+&lt;header&gt; 
+  &lt;h1&gt;Web Sekolah&lt;/h1&gt; 
+&lt;/header&gt;
+&lt;nav&gt; 
+  &lt;a href="#"&gt;Beranda&lt;/a&gt; | &lt;a href="#"&gt;Profil&lt;/a&gt; 
+&lt;/nav&gt;
+&lt;article&gt; 
+  &lt;p&gt;Berita hari ini...&lt;/p&gt; 
+&lt;/article&gt;
+&lt;footer&gt; 
+&lt;p&gt;Copyright 2023&lt;/p&gt; 
+&lt;/footer&gt;
+                </code></pre>
+              </div>
 
               <h5 class="mt-3">Output:</h5>
               <p>
@@ -1077,8 +1238,8 @@
 
               <h5 class="mt-3">Note Penting:</h5>
               <p>
-                Penggunaan tag semantik harus diprioritaskan di atas
-                <code>&lt;div&gt;</code> untuk tata letak utama.
+                Secara tampilan visual sama saja dengan div, tapi ini membuat
+                kodinganmu lebih profesional dan mudah dibaca mesin pencari.
               </p>
             </div>
           </div>
@@ -1095,7 +1256,7 @@
               aria-expanded="false"
               aria-controls="collapseUl"
             >
-              20. Daftar Tak Berurutan
+              20. Daftar Tak Berurutan / Daftar Poin
               <span class="tag-code">&lt;ul&gt; &amp; &lt;li&gt;</span>
             </button>
           </h2>
@@ -1109,11 +1270,20 @@
               <h5>Penjelasan:</h5>
               <p>
                 <span class="tag-code">&lt;ul&gt;</span> (Unordered List)
-                digunakan untuk membuat daftar yang tidak mementingkan urutan.
-                Setiap item dalam daftar diapit oleh tag
-                <span class="tag-code">&lt;li&gt;</span> (List Item).
+                digunakan untuk membuat daftar tanpa nomor (biasanya simbol
+                bulat/bullet). Urutannya tidak penting. Tiap isinya pakai tag
+                <code>&lt;li&gt;</code>.
               </p>
               <h5 class="mt-3">Penggunaan:</h5>
+              <div class="code-box">
+                <pre><code class="language-html">
+&lt;ul&gt;
+  &lt;li&gt;Kopi&lt;/li&gt;
+  &lt;li&gt;Teh&lt;/li&gt;
+  &lt;li&gt;Susu&lt;/li&gt;
+&lt;/ul&gt;
+                </code></pre>
+              </div>
 
               <h5 class="mt-3">Output:</h5>
               <p>
@@ -1123,7 +1293,11 @@
 
               <h5 class="mt-3">Note Penting:</h5>
               <p>
-                Untuk mengubah simbol *bullet*, gunakan properti CSS
+                Jangan lupa membungkus setiap item dengan
+                <code>&lt;li&gt;</code> (List Item).
+              </p>
+              <p>
+                Untuk mengubah simbol bullet, gunakan properti CSS
                 <code>list-style-type</code>.
               </p>
             </div>
@@ -1141,7 +1315,7 @@
               aria-expanded="false"
               aria-controls="collapseOl"
             >
-              21. Daftar Berurutan
+              21. Daftar Berurutan / Daftar Angka
               <span class="tag-code">&lt;ol&gt; &amp; &lt;li&gt;</span>
             </button>
           </h2>
@@ -1155,21 +1329,35 @@
               <h5>Penjelasan:</h5>
               <p>
                 <span class="tag-code">&lt;ol&gt;</span> (Ordered List)
-                digunakan untuk membuat daftar yang urutannya penting. Setiap
-                item juga diapit oleh tag
-                <span class="tag-code">&lt;li&gt;</span>.
+                digunakan untuk membuat daftar bernomor (1, 2, 3...) yang
+                urutannya penting, seperti langkah-langkah tutorial atau juara
+                lomba.
               </p>
               <h5 class="mt-3">Penggunaan:</h5>
+              <div class="code-box">
+                <pre><code class="language-html">
+&lt;Juara Lomba:&gt;
+&lt;ol&gt;
+  &lt;li&gt;Budi&lt;/li&gt;
+  &lt;li&gt;Ani&lt;/li&gt;
+  &lt;li&gt;Siti&lt;/li&gt;
+&lt;/ol&gt;
+                </code></pre>
+              </div>
 
               <h5 class="mt-3">Output:</h5>
               <p>
-                Daftar akan ditampilkan dengan penomoran otomatis (default:
-                angka) di depan setiap item.
+                Juara Lomba akan ditampilkan dengan penomoran otomatis (default:
+                angka).
               </p>
 
               <h5 class="mt-3">Note Penting:</h5>
               <p>
-                Anda dapat mengubah jenis penomoran menggunakan atribut
+                Nomor 1, 2, 3 akan muncul otomatis, kamu tidak perlu mengetiknya
+                manual.
+              </p>
+              <p>
+                Kamu dapat mengubah jenis penomoran menggunakan atribut
                 <code>type</code> (misalnya <code>type="A"</code> untuk huruf
                 kapital).
               </p>
@@ -1188,7 +1376,7 @@
               aria-expanded="false"
               aria-controls="collapseTable"
             >
-              22. Tabel
+              22. Tabel Data
               <span class="tag-code">&lt;table&gt;&lt;/table&gt;</span>
             </button>
           </h2>
@@ -1206,6 +1394,20 @@
                 tabel lainnya.
               </p>
               <h5 class="mt-3">Penggunaan:</h5>
+              <div class="code-box">
+                <pre><code class="language-html">
+&lt;table border="1"&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Baris 1, Sel 1&lt;/td&gt;
+    &lt;td&gt;Baris 1, Sel 2&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Baris 2, Sel 1&lt;/td&gt;
+    &lt;td&gt;Baris 2, Sel 2&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+                </code></pre>
+              </div>
 
               <h5 class="mt-3">Output:</h5>
               <p>Tabel yang belum diberi gaya CSS (tampak polos).</p>
@@ -1214,6 +1416,10 @@
               <p>
                 Selalu gunakan tag semantik <code>&lt;thead&gt;</code>,
                 <code>&lt;tbody&gt;</code>, dan <code>&lt;tfoot&gt;</code>.
+              </p>
+              <p>
+                Gunakan tabel hanya untuk menampilkan data (seperti jadwal
+                pelajaran), jangan untuk mengatur tata letak website.
               </p>
             </div>
           </div>
@@ -1230,7 +1436,7 @@
               aria-expanded="false"
               aria-controls="collapseTableCells"
             >
-              23. Baris & Sel
+              23. Isi Tabel: Baris & Sel
               <span class="tag-code">&lt;tr&gt;, &lt;td&gt;, &lt;th&gt;</span>
             </button>
           </h2>
@@ -1242,18 +1448,45 @@
           >
             <div class="accordion-body">
               <h5>Penjelasan:</h5>
-              <p>
-                Tag-tag ini menyusun isi tabel:
-                <span class="tag-code">&lt;tr&gt;</span> (Table Row),
-                <span class="tag-code">&lt;td&gt;</span> (Table Data), dan
-                <span class="tag-code">&lt;th&gt;</span> (Table Header).
-              </p>
+              <p>Struktur tabel disusun oleh 3 tag ini:</p>
+              <ul>
+                <li>
+                  <span class="tag-code">&lt;tr&gt;</span> (Table Row): Membuat
+                  baris baru (kiri ke kanan).
+                </li>
+                <li>
+                  <span class="tag-code">&lt;th&gt;</span> (Table Header): Judul
+                  kolom (otomatis tebal & tengah).
+                </li>
+                <li>
+                  <span class="tag-code">&lt;td&gt;</span> (Table Data): Kotak
+                  isi data biasa.
+                </li>
+              </ul>
               <h5 class="mt-3">Penggunaan:</h5>
+              <div class="code-box">
+                <pre><code class="language-html">
+&lt;table border="1"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Nama&lt;/th&gt; &lt;!-- Judul Kolom --&gt;
+    &lt;th&gt;Kelas&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Budi&lt;/td&gt; &lt;!-- Isi Data --&gt;
+    &lt;td&gt;10 A&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+                </code></pre>
+              </div>
 
               <h5 class="mt-3">Output:</h5>
               <p>Sel header (th) secara otomatis akan dicetak tebal.</p>
 
               <h5 class="mt-3">Note Penting:</h5>
+              <p>
+                Pastikan jumlah kolom (td/th) di setiap baris sama agar tabelnya
+                rapi.
+              </p>
               <p>
                 Gunakan atribut <code>colspan</code> atau
                 <code>rowspan</code> pada <code>&lt;td&gt;</code> atau
@@ -1290,11 +1523,19 @@
             <div class="accordion-body">
               <h5>Penjelasan:</h5>
               <p>
-                Tag <span class="tag-code">&lt;form&gt;</span> adalah wadah
-                untuk semua elemen input pengguna. Tag ini mengumpulkan data
-                pengguna dan mengirimkannya ke server.
+                Tag <span class="tag-code">&lt;form&gt;</span> digunakan sebagai
+                "amplop" atau wadah untuk membuat formulir (login, register,
+                kontak). Tag ini bertugas mengumpulkan data yang diisi user dan
+                mengirimnya ke server.
               </p>
               <h5 class="mt-3">Penggunaan:</h5>
+              <div class="code-box">
+                <pre><code class="language-html">
+&lt;form action="/kirim-data" method="POST"&gt;
+  &lt;!-- Kotak input diletakkan di sini --&gt;
+&lt;/form&gt;
+                </code></pre>
+              </div>
 
               <h5 class="mt-3">Output:</h5>
               <p>Kontainer yang menampung semua elemen input formulir.</p>
@@ -1338,21 +1579,36 @@
             <div class="accordion-body">
               <h5>Penjelasan:</h5>
               <p>
-                <span class="tag-code">&lt;input&gt;</span> adalah elemen paling
-                serbaguna untuk menerima data.
-                <span class="tag-code">&lt;label&gt;</span> memberikan deskripsi
-                pada input.
+                <span class="tag-code">&lt;input&gt;</span> adalah kotak isian
+                yang paling serbaguna. Jenisnya bisa diubah-ubah (teks,
+                password, tanggal).
+                <span class="tag-code">&lt;label&gt;</span> adalah judul untuk
+                kotak input tersebut agar user tahu apa yang harus diisi.
               </p>
               <h5 class="mt-3">Penggunaan:</h5>
+              <div class="code-box">
+                <pre><code class="language-html">
+&lt;label for="nama"&gt;Nama:&lt;/label&gt;
+&lt;input type="text" id="nama" placeholder="Tulis namamu..."&gt;
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;label for="pass"&gt;Password:&lt;/label&gt;
+&lt;input type="password" id="pass"&gt;
+                </code></pre>
+              </div>
 
               <h5 class="mt-3">Output:</h5>
-              <p>Kotak teks standar di halaman yang siap diisi.</p>
+              <p>
+                Kotak teks standar dan kotak password (titik-titik) yang siap
+                diisi.
+              </p>
 
               <h5 class="mt-3">Note Penting:</h5>
               <p>
-                Hubungkan <code>&lt;label&gt;</code> ke
-                <code>&lt;input&gt;</code> menggunakan atribut
-                <code>for</code> dan <code>id</code> yang cocok.
+                Hubungkan Label dan Input dengan menyamakan <code>for</code> dan
+                <code>id</code>. Ini membuat label bisa diklik untuk
+                mengaktifkan inputnya.
               </p>
             </div>
           </div>
@@ -1384,12 +1640,21 @@
             <div class="accordion-body">
               <h5>Penjelasan:</h5>
               <p>
-                <span class="tag-code">&lt;button&gt;</span> digunakan untuk
-                tombol yang dapat diklik.
-                <span class="tag-code">&lt;textarea&gt;</span> digunakan untuk
-                menerima input teks multi-baris (misalnya komentar).
+                <span class="tag-code">&lt;button&gt;</span> membuat tombol yang
+                bisa diklik.
+                <span class="tag-code">&lt;textarea&gt;</span> membuat kotak
+                teks besar yang ukurannya bisa ditarik, cocok untuk menulis
+                pesan panjang atau komentar.
               </p>
               <h5 class="mt-3">Penggunaan:</h5>
+              <div class="code-box">
+                <pre><code class="language-html">
+&lt;p&gt;Tulis Pesan:&lt;/p&gt;
+&lt;textarea rows="4" cols="30"&gt;Ketikan pesanmu...&lt;/textarea&gt;
+&lt;br&gt;
+&lt;button type="submit" class="btn btn-primary"&gt;Kirim Data&lt;/button&gt;
+                </code></pre>
+              </div>
 
               <h5 class="mt-3">Output:</h5>
               <p>
@@ -1398,6 +1663,9 @@
               </p>
 
               <h5 class="mt-3">Note Penting:</h5>
+              <p>
+                Selalu beri atribut <code>type="submit"</code> jika tombol digunakan untuk mengirim formulir.
+              </p>
               <p>
                 Selalu tentukan atribut <code>type</code> pada
                 <code>&lt;button&gt;</code>.
