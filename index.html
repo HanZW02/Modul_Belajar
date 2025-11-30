@@ -4,19 +4,73 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/x-icon" href="assets/img/favicon/logo_ekskul.png">
-    <!-- Bootstrap CSS -->
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
     <title>Modul Belajar | Ekskul Coding SMA Islam Ghama Ar-Rasyid</title>
+    <style>
+        /* CSS Tambahan untuk Styling Landing Page */
+        .module-card {
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+        .module-card:hover {
+            transform: translateY(-5px); 
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important; /* Bayangan lebih tebal */
+        }
+        .hero-logo {
+            max-height: 100px;
+            margin-bottom: 1.5rem;
+        }
+    </style>
   </head>
   <body>
     <div class="container mt-5">
-      <h1 class="mb-4">Modul Belajar Ekskul Coding</h1>
-      <div class="list-group">
-        <a href="modul/modul_html.html" class="list-group-item list-group-item-action">Modul HTML</a>
-        <a href="modul/modul_css.html" class="list-group-item list-group-item-action">Modul CSS</a>
+        
+        <div class="p-5 mb-4 bg-light rounded-3 shadow-sm text-center">
+            <img 
+                src="assets/img/favicon/logo_ekskul.png" 
+                alt="Logo Ekskul Coding" 
+                class="hero-logo"
+            >
+            <h1 class="display-5 fw-bold text-primary">Selamat Datang di Modul Belajar Coding SIGMA!</h1>
+            <p class="fs-4 text-secondary">
+                Pilih materi dasar HTML dan CSS di bawah ini untuk memulai petualanganmu membuat website.
+            </p>
         </div>
-    </div>
+        <h2 class="mb-4 text-center">Pilihan Materi</h2>
+        
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            
+            <div class="col">
+                <a href="modul/modul_html.html" class="text-decoration-none">
+                    <div class="card module-card h-100 border-primary shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary fs-3">Modul HTML</h5>
+                            <p class="card-text text-muted">
+                                Pelajari dasar-dasar struktur website, mulai dari tag &lt;html&gt;, &lt;p&gt;, &lt;img&gt;, hingga formulir.
+                            </p>
+                            <span class="btn btn-primary mt-2">Mulai Belajar →</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col">
+                <a href="modul/modul_css.html" class="text-decoration-none">
+                    <div class="card module-card h-100 border-success shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title text-success fs-3">Modul CSS</h5>
+                            <p class="card-text text-muted">
+                                Pelajari cara menata gaya halamanmu, termasuk Selector, Box Model, Margin, dan Padding.
+                            </p>
+                            <span class="btn btn-success mt-2">Mulai Belajar →</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+        </div>
+        </div>
 
     
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
