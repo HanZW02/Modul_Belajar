@@ -48,3 +48,17 @@
   background-color: transparent;
   padding: 0;
 }
+
+@media (max-width: 576px) {
+  .code-box {
+    font-size: 12px;
+  }
+
+   p, h2, h4, h5, h6, li, .accordion-button, .btn {
+    font-size: 12px;
+  }
+
+  body {
+    margin: 20px;
+  }
+}

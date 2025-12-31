@@ -2,21 +2,25 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
   <body>
-    <table border="1">
-      <tr>
-        <th>Nama</th>
-        <!-- Judul Kolom -->
-        <th>Kelas</th>
-      </tr>
-      <tr>
-        <td>Budi</td>
-        <!-- Isi Data -->
-        <td>10 A</td>
-      </tr>
-    </table>
+    <form action="/kirim-data" method="POST">
+      <label for="nama">Nama:</label>
+      <input type="text" id="nama" placeholder="Tulis namamu..." />
+
+      <br /><br />
+
+      <label for="pass">Password:</label>
+      <input type="password" id="pass" />
+
+      <p>Tulis Pesan:</p>
+
+      <textarea rows="4" cols="30">Ketikan pesanmu...</textarea>
+      <br />
+
+      <button type="submit" class="btn btn-primary">Kirim Data</button>
+    </form>
   </body>
 </html>
